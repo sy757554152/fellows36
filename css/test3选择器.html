@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            color: blue;
+            background: aqua;
+        }
+        /* id选择器 唯一的 */
+        #first{
+            color:rebeccapurple;
+            background: red;
+        }
+        /* 标签选择器 div p 等等 */
+        li{
+            color: aqua;
+            background: blue;
+        }
+        #list-first{
+            color:red;
+            background: pink; 
+        }
+        /* class选择器 选择一类进行变色 */
+        .list{
+            color: yellowgreen;
+            background: fuchsia;
+        }
+        /* .child{
+            color: pink;
+        } */
+        /* 后代选择器 */
+        /* .parent .child{
+            color:green;
+        } */
+        /* 子代选择器 //子元素选择器 */
+        .parent > .child{
+            color:green;
+        }
+        /* 伪类选择器 */
+        a:hover{
+            color:hotpink;
+        }
+        /* 兄弟选择器 */
+        .aa + .bb{
+            color:saddlebrown;
+        }
+        /* 群组选择器 分组选择器 */
+        .aa,.bb,.cc{
+            color: coral;
+        }
+        /* 伪元素选择器 */
+        .dd::after{
+            content: 'haha';
+            color: darkgoldenrod;
+        }
+        .dd::before{
+            content: 'hehe'
+        }
+    </style>
+</head>
+<body>
+    <!-- di选择器 唯一的 -->
+    <div id="first">
+        hahahah
+    </div>
+    <div id="second">
+        sadasdaw
+    </div>
+    <div id="third">
+        aswqefg
+    </div>
+    <p>asdqwefasd</p>
+    <p class="list">
+        jajjasjdaosjd
+    </p>
+    <ul> 
+        <li id="list-first">111</li>
+        <li id="list-second" class="list">222</li>
+        <li id="list-third">333</li>
+        <li id="list-fourth" class="list">444</li>
+    </ul>
+    <div class="parent">
+        11111111111111111
+        <div>
+            222222
+            <div class="child">
+                4444
+            </div>
+        </div>
+        <div class="child">
+                5555
+        </div>
+        <p>33333333</p>
+    </div>
+    <div class="parent1">
+        11111111111111111
+        <div class="child">
+            222222
+        </div>
+        <p>33333333</p>
+    </div>
+    <a href="http://www.baidu.com">百度</a>
+
+    <div class="aa">aaaaa</div>
+    <div class="bb">bbbbb</div>
+    <div class="bb">bbbbb</div>
+    <div class="cc">bbbbb</div>
+    <p class="cc">ccccc</p>
+
+    <div class="dd">dddddddddddd</div>
+</body>
+</html>

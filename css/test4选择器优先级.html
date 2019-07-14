@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            color: brown;
+        }
+        .aa{
+            color: green;
+        }
+        #bb{
+            color: blue;
+        }
+        /* 选择器的优先级 
+           style内联样式优先级最高 1000
+           #id id选择器 1000
+           .class 类选择器==a:伪类选择器 10
+           div 元素选择器==a::伪元素选择器 1
+        */
+        /* 优先级相同的情况下 
+           写在后边的会覆盖前面的。
+         */
+        .cc{
+            color: pink;
+        }
+        /* 10+1=11 */
+        .aa h1{
+            color: brown;
+        }
+        /* 1 */
+        h1{
+            color: blueviolet;
+        }
+        /* id 永远比class优先级高
+           即使class10级嵌套，也没用。
+        */
+    </style>
+</head>
+<body>
+    <div class="aa cc" id="bb" style="color: hotpink">
+        111111
+        <h1>hhahahhaha</h1>
+    </div>
+    <div class="div1">
+        <div class="div2"></div>
+    </div>
+</body>
+</html>
