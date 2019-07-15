@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+        body{
+            font-size: 50px;
+        }
         /* 雪碧图 css精灵 */
         .div1{
             /* background: red;
@@ -16,6 +19,7 @@
             background-position: 200px 100px;*/
             background: red url(../image/bbb.jpg) no-repeat 200px 100px;
             height: 500px;
+            text-indent: 20px;
         }
         .div2{
             width: 150px;
@@ -24,14 +28,66 @@
             background-repeat: no-repeat;
             background-position: -75px -75px;
         }
+        .div3{
+            background:#f00;
+            color: #fff;
+            /* 文本的水平对齐方式 还有left   right */
+            text-align: center;
+            height: 100px;
+            /* 单行文本垂直居中 */
+            line-height: 100px;
+
+        }
+        a{
+            /* 去掉下划线  还有overline ，blink，underline等等*/
+            text-decoration: none;
+        }
+        a:link{color: #ff0000;}
+        a:visited{color: #00ff00;}
+        a:hover{color: #ff00ff;}
+        a:active{color: #0000ff;}
+        .txt{
+            /* 字体大小 */
+            font-size: 12px;
+            /* 字体 */
+            font-family: 'Courier New', Courier, monospace;
+            /* 加粗 */
+            /* bold=700px    100到900之间*/
+            font-weight: bold;
+            /* font-style正常为normal italic为斜体  */
+            font-style: italic;
+
+            /* font: 12px bold italic; */
+        }
+        ul{
+            /* 去掉列表中..... */
+            list-style: none;
+        }
+        li{
+            /* 出现小手 */
+            cursor: pointer;
+        }
     </style>
 </head>
-<body>
+<body style="height: 2000px;">
     <div class="div1">
-        1111
+        哈哈哈傻傻的hahhahahahahahahahah哈啥实打实的1111
     </div>
     <div class="div2">
         3333
     </div>
+    <div class="div3">
+        我是div3。
+    </div>
+    <!-- #号为占位，不跳转 -->
+    <a href="#">aaaaa</a>
+    <div class="txt">
+        hahahahha
+    </div>
+
+    <ul>
+        <li>111</li>
+        <li>222222</li>
+    </ul>
 </body>
 </html>
