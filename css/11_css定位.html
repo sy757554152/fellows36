@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #div0{
+            width: 500px;
+            height: 500px;
+            background-color: #eeeeee;
+            /* margin-left: 200px; */
+            position: relative;
+            left:200px;
+        }
+        #div1{
+            width: 150px;
+            height: 100px;
+            background-color: red;
+            float: left;
+        }
+        #div2{
+            width: 150px;
+            height: 100px;
+            background-color: green;
+            float: left;
+            /* relative 相对定位 
+               1.相对于自己初始位置
+               2.定位以后空间不释放
+            */
+            /* position: relative;
+            left:200px;
+            top:300px; */
+            /* absolute 绝对定位 
+               1.相对于最近已定位的祖先元素  如果没有最近已定位的祖先元素 那就相对于bady
+               2.定位后空间释放
+               3.top,left不设置相当于0 0
+               4.动画中无初始值动不起来
+            */
+            position: absolute;
+            /* left: 50px;
+            top:100px; */
+            right: 0px;
+            bottom: 40px;
+        }
+        #div3{
+            width: 150px;
+            height: 100px;
+            background-color: blue;
+            float: left;
+        }
+        #div4{
+            /* fixed 固定定位
+               1.相对于浏览器/文档可视区定位
+               2.定位后空间释放
+               3.定位后宽度 内容撑的
+             */
+            position: fixed;
+            left:50px;
+            top: 60px;
+            background-color: brown;
+            /* 定位默认值 static 静态的 默认值 */
+        }
+    </style>
+</head>
+<body>
+    <div id="div0">
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+
+        <div id="div4"> 
+            hahahahahahahah
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
+    -webkit-font-smoothing: antialiased;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* 公共样式 用来居中 */
+.wrapper{
+    width: 1230px;
+    margin: 0 auto;
+    /* background: blue; */
+    height: 32px;
+}
+.arrow{
+    width: 0;
+    height: 0;
+    border: 4px solid transparent;
+    border-top: 2px solid #bbb;
+    /* 在浏览器内兼容性高一些 */
+    font-size: 0px;
+    line-height: 0px;
+    /* 绝对定位 */
+    position: absolute;
+    right: 6px;
+    top: 15px;
+    transition: transform 1s ease;
+}

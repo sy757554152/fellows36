@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            background: red;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: red;
+            /* 行级块元素 */
+            display: inline-block;
+        }
+        span{
+            height: 200px;
+            width: 200px;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- display 
+         inline 行元素 多个占一行 设置不了宽高
+         block 块元素 自己占一行 可以设置宽高
+         inline-block 行级块元素 多个占一行 可以设置宽高
+         none 隐藏
+    -->
+    <div id="div1">haha</div>
+    <div id="div2"></div>
+    <span>asdqwasda</span>
+</body>
+</html>

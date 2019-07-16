@@ -1,0 +1,77 @@
+#header{
+    height: 32px;
+    background: #a9180a;
+    border-bottom: 1px solid #a9180a;
+    line-height: 32px;
+}
+.header-left{
+    height: 32px;
+    /* 垂直居中 */
+    /* line-height: 32px; */
+    float: left;
+}
+/* 群组选择器 */
+.header-left span,.header-left a{
+    color: #fff;
+    font-size: 12px;
+}
+.header-left a{
+    text-decoration: none;
+    padding: 0 20px 0 10px;
+}
+.header-list{
+    float: right;
+
+}
+/* >子代选择器 */
+.header-list > li{
+    float: left;
+    padding: 0 14px 0 10px;
+
+}
+.header-list > li > a{
+    color: white;
+    
+}
+.list-arrow{
+    position: relative;
+    /* background: grey; */
+}
+.sub-list{
+    position: absolute;
+    left: 0px;
+    top: 32px;
+    background: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-top: none;
+    display: none;
+}
+.sub-list-tb{
+    width: 72px;
+    line-height: 25px;
+}
+.sub-list > li > a{
+    color: #a9180a;
+
+}
+/* class名为 list-arrow 的li  hover的时候 找到它里边class名为sub-list 的ul 然后显示 */
+.list-arrow:hover .sub-list{
+    display: block;
+}
+.list-arrow:hover{
+    background: #fff;
+}
+.list-arrow:hover > a{
+    color: #ff0036;
+    text-decoration:underline; 
+}
+/* li:hover 箭头旋转 */
+.list-arrow:hover .arrow{
+    transform: rotate(180deg);
+    transform-origin: 50% 25%;
+}
+.sub-list > a :hover{
+    color: #ff0036;
+    text-decoration: underline;
+}
