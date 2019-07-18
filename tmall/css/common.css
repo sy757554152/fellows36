@@ -16,8 +16,9 @@ a{
 .wrapper{
     width: 1230px;
     margin: 0 auto;
+    /* overflow: hidden; */
     /* background: blue; */
-    height: 32px;
+    /* height: 32px; */
 }
 /* 箭头旋转 */
 .arrow{
