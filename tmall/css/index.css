@@ -42,18 +42,19 @@
     left: 0px;
     top: 32px;
     background: white;
-    padding: 10px;
+    padding: 8px 10px;
     border: 1px solid #ccc;
     border-top: none;
     display: none;
 }
 .sub-list-tb{
-    width: 72px;
+    width: 74px;
     line-height: 25px;
 }
 .sub-list > li > a{
     color: #666;
-
+    display: block;
+    height: 20px;
 }
 .sub-list > li > a:hover{
     color: #ff0036;
@@ -84,7 +85,12 @@
     font-size: 12px;
     /* color: green; */
 }
-
+.list-arrow2:hover .iconfont{
+    color: yellow;
+}
+.list-arrow2:hover a{
+    color: yellow;
+}
 /* header 结束 */
 
 
@@ -281,6 +287,9 @@
     margin-bottom: 1px; */
     /* margin-left:3px;  */
 }
+.img-last:hover{
+    opacity: 0.7;
+}
 /* .sub-list-right a{
     width: 73px;
     height: 37px;
@@ -447,14 +456,14 @@ body{
     width: 122px;
     height: 108px;
     text-align: center;
-    background: #ff0036;
+    background: #fff;
     margin-right: 1px;
     margin-bottom: 1px;
     float: left;
     position: relative;
 }
 .brand-logo-list img{
-    width: 122px;
+    width: 100px;
     height: 50px;
     margin-top: 29px;
 }
@@ -462,14 +471,43 @@ body{
     margin-top: 15px;
 }
 .logo-list-mask{
-    height: 50px;
+    height: 108px;
     width: 122px;
     background: blue;
     position: absolute;
     top: 0;
     left: 0;
+    background: rgba(0,0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 0.5s linear;
+    display: none;
+    
+}
+.logo-mask-name{
+    color: #fff;
+    margin-top: 35px;
+}
+.logo-mask-btn{
+    background: #ff0036;
+    font-size: 12px;
+    height: 18px;
+    width: 63px;
+    line-height: 18px;
+    color: #fff;
+    margin: 10px auto 10px;
+}
+.brand-logo-list:hover .logo-list-mask{
+    display: block;
+    opacity: 1;
 }
 /* mart天猫超市 */
+.mart-head{
+    overflow: hidden;
+}
+.mart-body{
+    overflow: hidden;
+    float: left;
+}
 .mart-box{
     margin-top: 20px;
 }
@@ -477,4 +515,127 @@ body{
     width: 215px;
     height: 25px;
     float: left;
+}
+.mart-head-list{
+    float: right;
+}
+.mart-head-list li{
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    padding:5px 12px;
+}
+.mart-head-list a{
+    font-size:14px;
+    color: #000000;
+}
+.mart-head-list li:hover a{
+    text-decoration:underline;
+}
+.mart-next{
+    overflow: hidden;
+}
+.banner-box > img{
+    height: 618px;
+    width: 235px;
+}
+.banner-box{
+    position: relative;
+    float: left;
+}
+.banner-detail{
+    position: absolute;
+    width: 198px;
+    height: 64px;
+    left: 0;
+    bottom: 120px;
+    background: red;
+}
+.banner-detail-left{
+    width: 70px;
+    height: 64px;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 6px 10px 2px 16px;
+    box-sizing: border-box;
+    float: left;
+}
+.banner-detail-right{
+    width: 128px;
+    height: 64px;
+    float: left;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 6px 14px 0 10px;
+    box-sizing: border-box;
+}
+.banner-jiantou{
+    position: absolute;
+    width: 235px;
+    height: 60px;
+    overflow: hidden;
+    bottom: 0px;
+    left: 0;
+}
+.banner-j{
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+}
+.banner-box > img:hover{
+    opacity: 0.8;
+}
+.mart-list{
+    float: left;
+    /* background: red; */
+}
+.banner-list-box{
+    float: left;
+    width: 995px;
+    /* background: red; */
+}
+.banner-list img{
+    /* display: block; */
+    height: 185px;
+    width: 185px;
+    
+    
+}
+.banner-list{
+    width: 235px;
+    height: 302px;
+    float: left;
+    background: #fff;
+    margin-left: 13px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    padding: 25px;
+    border: 1px solid transparent;
+}
+.banner-list-1{
+    width: 484px;
+}
+.banner-list-des{
+    margin:0 25px;
+    height: 32px;
+    line-height: 20px;
+    overflow: hidden;
+    padding: 8px 0px;
+    color:#333;
+    font-size: 14px;
+}
+.banner-list-price{
+    text-align: center;
+    color: #ff0036;
+    font-size: 18px;
+}
+.banner-list:hover{
+    border: 1px solid #ff0036;
+}
+.banner-list:hover img{
+    opacity: 0.7;
 }
