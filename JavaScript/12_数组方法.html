@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //concat 连接数组
+        var arr=[1,2,3,4,5]
+        var arr2=['a','b','c'];
+        arr.concat(arr2);
+        console.log(arr);
+        //jion  分隔符
+        arr.join();
+        console.log(arr);
+        //pop 删除并返回数组最后一个元素
+        arr.pop();
+        console.log(arr);
+        //push 尾部加入元素
+        arr.push(88);
+        console.log(arr);
+        //unshift 头部加入元素
+        arr.unshift(12);
+        console.log(arr);
+        //shift 头部删除并显示元素
+        arr.shift();
+        console.log(arr);
+        //slice 返回选定的元素 包含start 不包含end
+        arr.slice(1,4);
+        console.log(arr);
+        //splice 删除替换
+        arr.splice(1,1,'a');
+        console.log(arr);
+        </script>
+</body>
+</html>

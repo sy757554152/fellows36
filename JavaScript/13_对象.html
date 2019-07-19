@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        内置对象
+        自定义对象
+        DOM对象
+
+     -->
+    <script>
+        
+        var obj=new Object;
+        //成员变量
+        obj.name="shiyu";
+        obj.age=20;
+        obj.rap =function(){
+            console.log("唱跳");
+        }
+        console.log(obj);
+        console.log(obj.name);
+        obj.rap();
+        var person={
+            name:"shiyu",
+            age:20,
+            play:function(){
+                console.log('打篮球');
+            }
+        }
+        console.log(person);
+        person.play();
+    </script>
+</body>
+</html>
