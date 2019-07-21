@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var x=Math.random();
+        // var y=Math.random();
+        // console.log(x>y?x:y);
+    
+        // var date=new Date();
+        // var year = date.getFullYear();
+        // if(((year%4)==0&&(year%100)!=0)||(year%400)==0){
+        //     console.log("闰年");
+        // }
+        // else{
+        //     console.log("不是闰年");
+        // }
+
+        // var num = prompt("请输入星期数", 1);
+        // num*=1;
+        // // 值和类型都相同
+        // switch (num) {
+        //     case 1:
+        //         console.log('一');
+        //         break;
+        //     case 2:
+        //         console.log('二');
+        //         break;
+        //     case 3:
+        //         console.log('三');
+        //         break;
+        //     case 4:
+        //         console.log('四');
+        //         break;
+        //     case 5:
+        //         console.log('五');
+        //         break;
+        //     case 6:
+        //         console.log('六');
+        //         break;
+        //     case 7:
+        //         console.log('天');
+        //         break;
+        //     default:
+        //         console.log('输入错误');
+        // }
+        
+
+
+        // for(var i=1000;i<9999;i++){
+        //     //console.log(i);
+        //     if(i%13==0&&(Math.floor(i/1000)==Math.floor(i/100)-Math.floor(i/1000)*10+Math.floor(i/10)-Math.floor(i/100)*10)){
+        //         console.log(i);
+        //     }
+        // }
+
+
+        // function f(x){
+        //     return 4*x*x+2*x+3;
+        // }
+        // var x=prompt("请输入X",1);
+        // x*=1;
+        // console.log(f(x));
+
+
+
+        // x=prompt("请输入x",1);
+        // var y=prompt("请输入y",1);
+        // function min(x,y){
+        //     return x>y?x:y;
+        // }
+        // console.log(min(x,y));
+
+
+
+        // var y=0;
+        // var str='';
+        // for(var i=1;i<=1000;i++){
+        //     if(i%3==0&&i%5==0&&i%7==0){
+        //         str=str+" "+i;
+        //         y++;
+        //         if(y==6){
+        //             y=0;
+        //             console.log(str);
+        //             str="";
+        //         }
+        //     }
+        // }
+        // console.log(str);
+
+
+
+
+        // var y=0;
+        // var str='';
+        // for(i=100;i<=1000;i++){
+        //     for(j=2;j<Math.sqrt(i);j++){
+        //         if(i%j==0){
+        //             j=1;
+        //             break;
+        //         }
+        //     }
+        //     if(j!=1){
+        //         str=str+" "+i;
+        //         y++;
+        //         if(y==6){
+        //             y=0;
+        //             console.log(str);
+        //             str="";
+        //         }
+        //     }
+
+        // }
+        
+
+
+
+        // function factorial(n){
+        //     var sum=1;
+        //     for(var i=1;i<=n;i++){
+        //         sum=sum*i;
+        //     }
+        //     return sum;
+        // }
+        // var a=factorial(12);
+        // var b=factorial(10);
+        // console.log(a-b);
+
+
+        var str="";
+        function star(n){
+            for(i=1;i<=n;i++){
+                for(j=1;j<n-i+1;j++){
+                    document.write("&nbsp;");//&nbsp 空格
+                }
+                for(j=1;j<=i;j++){
+                    document.write("* ");
+                }
+                for(j=n-1;j>1;j--){
+                    document.write(" ");
+                }
+                document.write("<br>")
+
+            }
+        }
+        star(4);
+    
+    </script>
+    
+</body>
+</html>
