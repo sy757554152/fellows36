@@ -46,6 +46,15 @@
     border-top: none;
     display: none;
 }
+.sub-list-phone{
+    top: 26px;
+    left: -48px;
+    width: 175px;
+    height: 227px;
+    display: block;
+    background: red;
+    z-index: 2;
+}
 .sub-list-tb{
     left: 0px;
     width: 74px;
@@ -217,6 +226,9 @@
     font-size: 12px;
     /* color: green; */
 }
+.list-arrow2{
+    position: relative;
+}
 .list-arrow2:hover .iconfont{
     color: yellow;
 }
@@ -332,7 +344,7 @@
 .slide-box{
     height: 500px;
     background: #ccc;
-    border: 1px solid #ff0036;
+    border: 1px solid #ccc;
 }
 .slide-wrapper{
     height: 500px;
@@ -489,8 +501,8 @@
 .img-last{
     background: #fff;
     width: 73px;
-    border-left: 9.5px solid #fff;
-    border-right: 9.5px solid #fff;
+    /* border-left: 9.5px solid #fff;
+    border-right: 9.5px solid #fff; */
 
     /* margin-right: 1px;
     margin-bottom: 1px; */
@@ -499,12 +511,26 @@
 .img-last:hover{
     opacity: 0.7;
 }
-/* .sub-list-right a{
+.sub-list-right a{
+    float: left;
     width: 73px;
     height: 37px;
-    
+    margin-right: 1px;
+    margin-bottom: 1px;
+    padding: 5px 10px;
+    background: #fff;
     overflow: hidden;
-} */
+}
+.sub-list-right .last-one{
+    width: 189px;
+    height: 97px;
+    float: left;
+    border-top: 8px solid #fafafa;
+    background: #fff;
+    overflow: hidden;
+    padding: 0px 0px;
+    margin: 0px;
+}
 .left-title{
     float: left;
 }
@@ -547,8 +573,13 @@
     /* height: 63px; */
 }
 .pinkcolor a{
-    display: block;
     color: #e54077;
+}
+.bluecolor a{
+    color: #427def;
+}
+.blue2color a{
+    color: #6347ed;
 }
 /* .img-last{
     float: left;
@@ -585,8 +616,14 @@
 .main-list:hover > .icon{
     color: #e54077
 }
-.left-thing-st a:hover{
+.left-color1 .left-thing-st a:hover{
     color: #e54077;
+}
+.left-color2 .left-thing-st a:hover{
+    color: #427def;
+}
+.left-color3 .left-thing-st a:hover{
+    color: #6347ed;
 }
 .underline{
     width: 493px;
