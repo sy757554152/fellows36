@@ -50,10 +50,22 @@
     top: 26px;
     left: -48px;
     width: 175px;
-    height: 227px;
+    height: 217px;
     display: block;
-    background: red;
+    background: #fff;
     z-index: 2;
+    padding: 0px;
+    border: 0px;
+    display: none;
+}
+.arrow2{
+    width: 0;
+    height: 0;
+    border: 4px solid transparent;
+    border-bottom: 2px solid #fff;
+    position: absolute;
+    top: -6px;
+    left: 85px;
 }
 .sub-list-tb{
     left: 0px;
@@ -173,6 +185,16 @@
     height: 16.8px;
     line-height: 16.8px;
     color: #666;
+    
+}
+.hot-a{
+    position: relative;
+}
+.hot-a img{
+    position: relative;
+    overflow: hidden;
+    top: -7px;
+    right: 0px;
 }
 .list-first-part2:hover a{
     color: #ff0036;
@@ -201,6 +223,9 @@
 }
 /* class名为 list-arrow 的li  hover的时候 找到它里边class名为sub-list 的ul 然后显示 */
 .list-arrow:hover .sub-list{
+    display: block;
+}
+.list-arrow2:hover .sub-list-phone{
     display: block;
 }
 .list-arrow:hover{
