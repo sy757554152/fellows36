@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #content {
+            height: 291px;
+            width: 750px;
+            margin: 100px;
+            position: relative;
+        }
+
+        #picture img {
+            float: left;
+            display: none;
+        }
+
+        #picture .pic {
+            display: block;
+        }
+
+        #left {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+        }
+
+        #left li {
+            height: 20px;
+            width: 20px;
+            float: left;
+            background: rgba(0, 0, 0, 0.4);
+            text-align: center;
+            line-height: 20px;
+            margin-right: 5px;
+            border-radius: 5px;
+            font-size: 12px;
+            color: white;
+        }
+
+        #right {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+
+        }
+
+        #right li {
+            height: 20px;
+            width: 20px;
+            float: left;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 5px;
+            border-radius: 5px;
+            font-size: 12px;
+            background: rgba(0, 0, 0, 0.4);
+            color: white;
+        }
+
+        #right li.red1 {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <div id="picture">
+            <img class="pic" src="img/1.jpg" alt="">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+            <img src="img/4.jpg" alt="">
+            <img src="img/5.jpg" alt="">
+        </div>
+        <ul id="left">
+            <li>&lt;</li>
+            <li>&gt;</li>
+        </ul>
+        <ul id="right">
+            <li class="red1">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+
+    </div>
+    <script>
+        var a = document.getElementById('right');
+        var b = document.getElementById('left');
+        var c = document.getElementById('picture')
+        var x = a.getElementsByTagName('li');
+        var y = b.getElementsByTagName('li');
+        var z = c.getElementsByTagName('img');
+        var con = document.getElementById('content');
+        var sum = 0;
+        for (var i = 0; i < x.length; i++) {
+            x[i].num = i;
+            x[i].onclick = function () {
+                for (var j = 0; j < x.length; j++) {
+                    x[j].className = "";
+                    z[j].className = "";
+                }
+                this.className = "red1";
+                sum = this.num;
+                z[this.num].className = "pic";
+            }
+        }
+        for (var k = 0; k < y.length; k++) {
+            y[k].num = k;
+            y[k].onclick = function () {
+                for (var m = 0; m < x.length; m++) {
+                    x[m].className = "";
+                    z[m].className = "";
+                }
+                if (this.num == 1) {
+                    if (sum < 4) {
+                        x[++sum].className = "red1";
+                        z[sum].className = "pic";
+                    }
+                    else {
+                        sum = 0;
+                        x[sum].className = "red1";
+                        z[sum].className = "pic";
+                    }
+                }
+                if (this.num == 0) {
+                    if (sum > 0) {
+                        x[--sum].className = "red1";
+                        z[sum].className = "pic";
+                    }
+                    else {
+                        sum = 4;
+                        x[sum].className = "red1";
+                        z[sum].className = "pic";
+                    }
+                }
+            }
+        }
+        function time() {
+            //timer不要写全局变量
+            timer = setInterval(function () {
+                for (var n = 0; n < x.length; n++) {
+                    x[n].className = "";
+                    z[n].className = "";
+                }
+                if (sum < 4) {
+                    x[++sum].className = "red1";
+                    z[sum].className = "pic";
+                }
+                else {
+                    sum = 0;
+                    x[sum].className = "red1";
+                    z[sum].className = "pic";
+                }
+            }, 2500)
+        }
+        time();
+        f();
+        function f() {
+            con.onmouseout = function () {
+                time();
+            }
+            con.onmouseover = function () {
+                fn();
+            }
+            
+        }
+        f();
+        function fn() {
+            clearInterval(timer);
+        }
+        
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #space {
+            margin: 100px;
+        }
+
+        #list {
+            overflow: hidden;
+        }
+
+        #list li {
+            float: left;
+            border: 1px solid #898989;
+            color: #666666;
+            font-size: 14px;
+            width: 50px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            margin-right: 10px;
+            border-bottom: none;
+            background: #f1f1f1;
+        }
+
+        #list li.active {
+            background: purple;
+            color: black;
+        }
+
+        
+
+        #space1{
+            border: 1px solid #868686;
+            height: 100px;
+            width: 300px;
+        }
+        #space1 div{
+            display: none;
+        }
+        #space1 .selected{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="space">
+
+        <ul id="list">
+            <li>时事</li>
+            <li>体育</li>
+            <li>娱乐</li>
+        </ul>
+        <div id="space1">
+            <div class="div1 selected" id="first">
+                时事1
+            </div>
+            <div class="div1" id="second">
+                体育1
+            </div>
+            <div class="div1" id="third">
+                娱乐1
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /*
+        var a1=document.getElementById('space');
+        var a2=document.getElementById('list');
+        var a3=document.getElementsByTagName('li');
+        var a4=document.getElementById('first');
+        var a5=document.getElementById('second');
+        var a6=document.getElementById('third');
+        a3[0].onclick=function(){
+            a3[0].style.background="blue";
+            a4.style.display="block";
+            a3[0].style.color="black";
+            a5.style.display="none";
+            a6.style.display="none";
+            a5.style.color="#666";
+            a6.style.color="#666";
+            a3[1].style.background="#f1f1f1";
+            a3[2].style.background="#f1f1f1";
+        } 
+        a3[1].onclick=function(){
+            a3[1].style.background="blue";
+            a5.style.display="block";
+            a3[1].style.color="black";
+            a4.style.display="none";
+            a6.style.display="none";
+            a4.style.color="#666";
+            a6.style.color="#666";
+            a3[0].style.background="#f1f1f1";
+            a3[2].style.background="#f1f1f1";
+        } 
+        a3[2].onclick=function(){
+            a3[2].style.background="blue";
+            a6.style.display="block";
+            a3[2].style.color="black";
+            a4.style.display="none";
+            a5.style.display="none";
+            a5.style.color="#666";
+            a4.style.color="#666";
+            a3[0].style.background="#f1f1f1";
+            a3[1].style.background="#f1f1f1";
+        }
+        */
+
+
+        /*undefined
+        1.定义变量没有赋值
+        2.数组越界 返回undefined
+        3.访问对象下没有的属性
+        4.函数没有返回值 默认返回undefined
+        5.
+        */
+        var b = document.getElementById('space');
+        var a = document.getElementsByTagName('li');
+        var x =document.getElementById('space1')
+        var y =x.getElementsByTagName('div');
+        for (var i = 0; i < a.length; i++) {
+            //添加索引
+            a[i].num = i;
+            a[i].onclick = function () {
+                //把所有的li  className清空
+                for (var j = 0; j < a.length; j++) {
+                    a[j].className = "";y[j].className = "";
+                }
+                //    点击的li
+                this.className = "active";
+                
+                y[this.num].className = "selected";
+            }
+        }
+    </script>
+</body>
+
+</html>
