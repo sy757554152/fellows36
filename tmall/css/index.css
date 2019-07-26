@@ -362,9 +362,10 @@
     height: 35px;
     line-height: 35px;
     padding: 0 8px;
-
 }
-
+.nav a:hover{
+    color: #ff0036;
+}
 /* 轮播图开始 */
 .slide-box{
     height: 500px;
@@ -733,6 +734,16 @@ body{
     float: left;
     position: relative;
 }
+.brand-logo-list-1{
+    width: 122px;
+    height: 108px;
+    text-align: center;
+    background: #ff0036;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    float: left;
+    position: relative;
+}
 .brand-logo-list img{
     width: 100px;
     height: 50px;
@@ -742,11 +753,10 @@ body{
     width: 40px;
     height: 40px;
     position: absolute;
-    top: 24px;
+    top: 28px;
     left: 41px;
-    background: red;
-    color: white;
-    font-size: 24px;
+    color: #999;
+    font-size: 26px;
     display: block;
 }
 
@@ -766,6 +776,19 @@ body{
     display: none;
     
 }
+.logo-list-mask-1{
+    background: #fff;
+    height: 108px;
+    width: 122px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background: rgba(0,0, 0, 0.8); */
+    /* opacity: 0; */
+    /* transition: opacity 0.5s linear; */
+    /* display: block; */
+}
+
 .logo-mask-name{
     color: #fff;
     margin-top: 35px;
@@ -780,17 +803,27 @@ body{
     margin: 10px auto 10px;
 }
 .logo-mask-btn-2{
-    background: #ff0036;
     font-size: 14px;
     height: 24px;
     width: 122px;
     line-height: 24px;
-    color: #fff;
-    margin-top: 60px;
+    color: #999;
+    margin-top: 58px;
 }
 .brand-logo-list:hover .logo-list-mask{
     display: block;
     opacity: 1;
+}
+.logo-list-mask-1:hover{
+    background: #ff0036;
+}
+.logo-list-mask-1:hover .logo-mask-btn-2{
+    color: #fff;
+}
+.logo-list-mask-1:hover .icon-huanyipi{
+    color: #fff;
+    transform: rotate(180deg);
+    transition: transform 0.2s linear;
 }
 /* mart天猫超市 */
 .mart-head{
@@ -822,7 +855,7 @@ body{
     color: #000000;
 }
 .mart-head-list li:hover a{
-    text-decoration:underline;
+    border-bottom: 1px solid #000000;
 }
 .mart-next{
     overflow: hidden;
@@ -841,7 +874,6 @@ body{
     height: 64px;
     left: 0;
     bottom: 120px;
-    background: red;
 }
 .banner-detail-left{
     width: 70px;
@@ -877,6 +909,7 @@ body{
     position: absolute;
     bottom: 14px;
     right: 14px;
+    color: #ffffff;
 }
 .banner-box > img:hover{
     opacity: 0.8;
@@ -930,4 +963,176 @@ body{
 }
 .banner-list:hover img{
     opacity: 0.7;
+}
+/*天猫超市结束*/
+
+/*天猫国际开始*/
+.inter-box{
+    margin-top: 20px;
+}
+.inter-head{
+    overflow: hidden;
+}
+.inter-head img{
+    float: left;
+    width: 214px;
+    height: 25px;
+}
+.inter-head ul{
+    float: right;
+}
+.inter-head ul li{
+    float: left;
+    display: block;
+    margin: 5px 10px;
+    height: 20px;
+
+}
+.inter-head ul li a{
+    line-height: 20px;
+    font-size: 14px;
+    color: #000000;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.inter-head ul li a:hover{
+    border-bottom: 1px solid #000000;
+}
+
+.inter-ul{
+    overflow: hidden;
+}
+.inter-body{
+    width: 236.5px;
+    height: 300px;
+    background: #fff;
+    float: left;
+}
+.inter-label >a >img{
+    width: 236px;
+    height: 300px;
+}
+.inter-label{
+    position: relative;
+    margin-top: 15px;
+    width: 238px;
+}
+.inter-detail{
+    position: absolute;
+    bottom: 60px;
+    left: 0px;
+}
+.inter-detail div{
+    float: left;
+}
+.inter-detail-left{
+    width: 70px;
+    height: 64px;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 6px 10px 2px 16px;
+    box-sizing: border-box;
+}
+.inter-detail-right{
+    width: 128px;
+    height: 64px;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 6px 30px 0 10px;
+    box-sizing: border-box;
+}
+.inter-jiantou{
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+
+}
+.inter-jiantou img{
+    height: 32px;
+    width: 32px;
+    color: #ffffff;
+}
+.inter-label >a >img:hover{
+    opacity: 0.7;
+}
+.inter-introduce1{
+    height: 24px;
+    margin-top: 20px;
+    margin-left: 25px;
+    font-size: 18px;
+    line-height: 24px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    color: #000;
+}
+.inter-introduce2{
+    height: 18px;
+    line-height: 18px;
+    margin-left: 25px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #7A45E5;
+}
+.inter-img img{
+    height: 170px;
+    width: 170px;
+    margin-left: 32px;
+    margin-top: 23px;
+}
+.inter-thing img{
+    width: 185px;
+    height: 185px;
+}
+.inter-thing{
+    box-sizing: border-box;
+    padding: 25px;
+    border: 1px solid transparent;
+    margin-left: 11px;
+    margin-top: 15px;
+}
+.inter-thing-1{
+    border: 1px solid transparent;
+    margin-left: 11px;
+    margin-top: 15px;
+}
+.inter-thing-1:hover{
+    border: 1px solid #ff0036;
+}
+.inter-thing-1 img:hover{
+    opacity: 0.8;
+}
+.inter-thing:hover{
+    border: 1px solid #ff0036;
+}
+.inter-thing img:hover{
+    opacity: 0.8;
+}
+.inter-list-des{
+    margin:0 25px;
+    height: 32px;
+    line-height: 20px;
+    overflow: hidden;
+    padding: 8px 0px;
+    color:#333;
+    font-size: 14px;
+}
+.inter-list-price{
+    text-align: center;
+    color: #ff0036;
+    font-size: 18px;
+}
+/*天猫国际结束*/
+/*广告开始*/
+.ad{
+    overflow: hidden;
+}
+.ad-img{
+    margin-top: 20px;
+    display: block;
+    margin-left: -165px;
+    width: 1620px;
+    height: 90px;
 }
