@@ -738,6 +738,18 @@ body{
     height: 50px;
     margin-top: 29px;
 }
+.icon-huanyipi{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 24px;
+    left: 41px;
+    background: red;
+    color: white;
+    font-size: 24px;
+    display: block;
+}
+
 .brand-logo{
     margin-top: 15px;
 }
@@ -766,6 +778,15 @@ body{
     line-height: 18px;
     color: #fff;
     margin: 10px auto 10px;
+}
+.logo-mask-btn-2{
+    background: #ff0036;
+    font-size: 14px;
+    height: 24px;
+    width: 122px;
+    line-height: 24px;
+    color: #fff;
+    margin-top: 60px;
 }
 .brand-logo-list:hover .logo-list-mask{
     display: block;

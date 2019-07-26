@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+
+        #first,#second {
+            height: 400px;
+            width: 400px;
+            overflow: hidden;
+            float: left;
+        }
+
+        #first {
+            position: relative;
+        }
+
+        #first-one {
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.5);
+            display: none;
+        }
+
+        #second {
+            display: none;
+            position: relative;
+        }
+        #picture{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <div id="first">
+            <img src="img/1.1.jpg" alt="">
+            <span id="first-one"></span>
+        </div>
+        <div id="second">
+            <img id="picture" src="img/1.2.jpg" alt="">
+        </div>
+    </div>
+    <script>
+        var smallpic = document.getElementById('first');
+        var space = document.getElementById('first-one');
+        var bigpic = document.getElementById('second');
+        var bigone = document.getElementById('picture');
+        smallpic.onmouseover = function () {
+            bigpic.style.display = "block";
+            space.style.display = "block";
+        }
+        /*smallpic.onmousemove=function(e){
+            if(e.clientX<=space.offsetWidth/2&&e.clientY<=space.offsetHeight/2){
+                space.style.left="0px";
+                space.style.top="0px";
+            }
+            else if(e.clientX<=space.offsetWidth/2){
+                if(e.clientY>=smallpic.offsetHeight-space.offsetHeight/2){
+                    space.style.left="0px";
+                    space.style.top=smallpic.offsetHeight-space.offsetHeight+"px";
+                }
+                else{
+                    space.style.left="0px";
+                    space.style.top=e.clientY-space.offsetHeight/2+"px";
+                }
+            }
+            else if(e.clientY<=space.offsetHeight/2){
+                if(e.clientX>=smallpic.offsetWidth-space.offsetWidth/2){
+                    space.style.top="0px";
+                    space.style.left=smallpic.offsetWidth-space.offsetWidth+"px";
+                }
+                else{
+                    space.style.top="0px";
+                    space.style.left=e.clientX-space.offsetWidth/2+"px";
+                }
+            }
+            else if(e.clientY>=smallpic.offsetHeight-space.offsetHeight/2){
+                space.style.top=smallpic.offsetHeight-space.offsetHeight+"px";
+                space.style.left=e.clientX-space.offsetWidth/2+"px";
+            }
+            else if(e.clientX>=smallpic.offsetWidth-space.offsetWidth/2){
+                space.style.left=smallpic.offsetWidth-space.offsetWidth+"px";
+                space.style.top=e.clientY-space.offsetHeight/2+"px";
+            }
+            else if(e.clientY>=smallpic.offsetHeight-space.offsetHeight/2&&e.clientX>=smallpic.offsetWidth-space.offsetWidth/2){
+                space.style.left=smallpic.offsetWidth-space.offsetWidth+"px";
+                space.style.top=smallpic.offsetHeight-space.offsetHeight+"px";
+            }
+            else{
+                space.style.top=e.clientY-space.offsetHeight/2+"px";
+                space.style.left=e.clientX-space.offsetWidth/2+"px";
+            }
+            
+        }*/
+        smallpic.onmousemove = function (e) {
+            space.style.top = e.clientY - space.offsetHeight / 2 + "px";
+            space.style.left = e.clientX - space.offsetWidth / 2 + "px";
+            if(space.offsetLeft<0){
+                space.style.left="0px";
+            }
+            var maxLeft=smallpic.offsetWidth-space.offsetWidth;
+            if(space.offsetLeft>=maxLeft){
+                space.style.left=maxLeft+"px";
+            }
+            if(space.offsetTop<0){
+                space.style.top="0px";
+            }
+            var maxTop=smallpic.offsetHeight-space.offsetHeight;
+            if(space.offsetTop>=maxTop){
+                space.style.top=maxTop+"px";
+            }
+
+            var smallDisX =smallpic.offsetWidth-space.offsetWidth;
+            var bigDisX =bigone.offsetWidth-bigpic.offsetWidth;
+            var xPro =space.offsetLeft/smallDisX;
+            bigone.style.left=-bigDisX*xPro+"px";
+            // var smallDisY =smallpic.offsetHeight-space.offsetHeight;
+            // var bigDisY =bigone.offsetHeight-bigpic.offsetHeight;
+            // var yPro =sapce.offsetTop/smallDisY;
+            // bigone.style.top=-bigDisY*yPro+"px";
+        }
+        smallpic.onmouseout = function () {
+            space.style.display = "none";
+        }
+
+    </script>
+</body>
+
+</html>

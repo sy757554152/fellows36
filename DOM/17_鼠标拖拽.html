@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #div1 {
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rebeccapurple;
+        }
+
+        body {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <script>
+        var space = document.getElementById('div1');
+        var xDIS;
+        var yDIS;
+        space.onmousedown = function (e) {
+            xDIS = e.clientX - space.offsetLeft;
+            yDIS = e.clientY - space.offsetTop;
+            document.onmousemove = function (e) {
+                space.style.top = e.clientY - yDIS + "px";
+                space.style.left = e.clientX - xDIS + "px";
+                if(space.offsetLeft<0){
+                    space.style.left="0px";
+                }
+                if(space.offsetTop<0){
+                    space.style.top="0px";
+                }
+                var xMax=document.documentElement.clientWidth-space.offsetWidth;
+                if(space.offsetLeft>xMax){
+                    space.style.left=xMax+"px";
+                }
+                var yMax=document.documentElement.clientHeight-space.offsetHeight;
+                if(space.offsetTop>yMax){
+                    space.style.top=yMax+"px";
+                }
+            }
+
+        }
+        space.onmouseup = function () {
+            //事件置成none 事件取消
+            document.onmousemove = null;
+        }
+    </script>
+</body>
+
+</html>
