@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #first span {
+            display: block;
+            width: 100px;
+            background: black;
+            font-size: 16px;
+            color: white;
+            border: 1px solid black;
+            height: 35px;
+        }
+
+        #second span {
+            display: block;
+            height: 35px;
+            width: 100px;
+            background: black;
+            font-size: 16px;
+            color: white;
+            border: 1px solid black;
+        }
+
+        #list1 {
+            width: 100px;
+            border: 1px solid black;
+        }
+
+        #list2 {
+            width: 100px;
+            border: 1px solid black;
+        }
+
+        #list1 li {
+            height: 20px;
+            width: 100px;
+            background: white;
+            color: black;
+        }
+
+        #list2 li {
+            height: 20px;
+            width: 100px;
+            background: white;
+            color: black;
+        }
+
+        #list1 {
+            display: none;
+        }
+
+        #list2 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="first">
+            <span>管理区</span>
+            <ul id="list1">
+                <li>2111</li>
+                <li>2111</li>
+                <li>2111</li>
+            </ul>
+        </div>
+        <div id="second">
+            <span>交流区</span>
+            <ul id="list2">
+                <li>2111</li>
+                <li>2111</li>
+                <li>2111</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var div1 = document.getElementById('first');
+        var div2 = document.getElementById('second');
+        var ulList1 = document.getElementById('list1');
+        var ulList2 = document.getElementById('list2');
+        var aH2 = document.getElementsByTagName('span');
+        
+        function next(elem) {
+            do {
+                elem = elem.nextSibling;
+            } while (elem && elem.nodeType != 1)
+            return elem;
+        }
+        /*for (var i = 0; i < aH2.length; i++) {
+            aH2[i].onclick = function () {
+                var oUl = next(this);
+                if (oUl.style.display == "none" || oUl.style.display == "") {
+                    oUl.style.display = "block";
+                }
+                else {
+                    oUl.style.display = "none";
+                }
+            }
+        }*/
+        for (var i = 0; i < aH2.length; i++) {
+            aH2[i].flag=true;
+            aH2[i].onclick = function () {
+                var oUl = next(this);
+                
+                if (this.flag) {
+                    oUl.style.display = "block";
+                }
+                else {
+                    oUl.style.display = "none";
+                }
+                this.flag=!this.flag;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            position: relative;
+        }
+
+        img {
+            position: absolute;
+            transition: top 0.5 linear;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 叶子
+        属性   大小 位置  图片 速度
+        方法   下落 初始化
+    -->
+    <script>
+        var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+        var screenHeight = document.documentElement.clientHeight || document.bod.clientHeight;
+        function Leaf() {
+            this.width = Math.floor(Math.random() * 50 + 100);
+            this.pos = {
+                //用冒号！！！！
+                left: Math.floor(Math.random() * (screenWidth - this.width)),
+                top: 0
+            }
+            this.speed = 5;
+            var oImg = new Image();
+            oImg.src = "img/" + (Math.floor(Math.random() * 4) + 1) + ".png";
+            oImg.style.width = this.width;
+            oImg.style.left = this.pos.left + "px";
+            oImg.style.top = this.pos.top + "px";
+            this.img = oImg;
+        }
+        // Leaf.prototype.low=function(){
+
+        // }
+        // Leaf.prototype.first=function(){
+        //     // this.
+        // }
+        // var w=Math.floor(Math.random()*50+100);
+        // var left=Math.floor(Math.random()*)
+        // var timer = setInterval(function () {
+        //     this.pos.top += this.speed + "px";
+        // }, 2500)
+        // var num = new Array(Math.floor(Math.random() * 10));
+        // for (var i = 0; i < num.length; i++) {
+        //     num[i] = new Leaf();
+        //     document.body.appendChild(num[i].img);
+        //     num[i].onclick = function () {
+        //         var timer = setInterval(function () {
+        //             this.pos.top += this.speed + "px";
+        //             this.img.style.top = this.pos.top + "px";
+        //         }, 1000);
+        //         if (this.pos.top >= screenHeight) {
+        //             this.pos.top = screenHeight + "px";
+        //             this.img.style.top = this.pos.top + "px";
+        //             clearInterval(timer);
+        //         }
+
+        //     }
+        // }
+        Leaf.prototype.init=function(){
+            document.body.appendChild(this.img);
+        }
+        Leaf.prototype.fall = function () {
+            var that = this;
+            setTimeout(function(){//延迟不同时间下落
+                this.timer = setInterval(function () {// 定时器中this指向window.  设置每个对象自己的定时器
+                if (that.img.offsetTop > screenHeight - that.img.offsetHeight) {
+                    clearInterval(that.timer);
+                }
+                else { that.img.style.top = that.img.offsetTop + that.speed + "px" };
+            }, Math.floor(Math.random()*30));
+            },Math.floor(Math.random()*200))
+
+        }
+        // var leaf = new Leaf();
+        // document.body.appendChild(leaf.img);
+        // document.onclick = function () {
+        //     leaf.fall();
+        // }
+        var num = new Array(Math.floor(Math.random() * 10));
+        for (var i = 0; i < num.length; i++) {
+            num[i] = new Leaf();
+            document.body.appendChild(num[i].img);
+            document.onclick=function(){
+                for(var j=0;j<num.length;j++){
+                    num[j].fall();
+                }
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

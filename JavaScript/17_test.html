@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-
     <script>
+        // 全局作用域  函数作用域
+        var x = 100;
+
+        if (x > 10) {
+            var y = 200;
+            console.log(y);
+        }
+
+        console.log(y);
+
+        // oDiv
         
-        var date = new Date();
-        console.log(date.getMonth());
-        
-        date.setDate(32);
 
-        console.log(date);
 
-        console.log(Math.abs(-20));
 
-        console.log(Math.ceil(7.1))
 
-        console.log(Math.random());
-        console.log(parseInt('abc123'));
     </script>
-    
+
 </body>
+
 </html>

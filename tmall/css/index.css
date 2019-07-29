@@ -1136,3 +1136,10 @@ body{
     width: 1620px;
     height: 90px;
 }
+/*广告结束*/
+/*猜你喜欢开始*/
+.like-title{
+    height: 43px;
+    text-align: center;
+    line-height: 43px;
+}
