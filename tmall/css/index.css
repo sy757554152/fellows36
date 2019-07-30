@@ -1138,8 +1138,116 @@ body{
 }
 /*广告结束*/
 /*猜你喜欢开始*/
+
 .like-title{
     height: 43px;
     text-align: center;
     line-height: 43px;
+    position: relative;
+    margin: 20px 0px;
+}
+.title-before{
+    display: block;
+    height: 1px;
+    width: 30px;
+    background: #979797;
+    position: absolute;
+    top: 21px;
+    left: 507px;
+}
+.icon-xihuan{
+    font-size: 18px;
+    font-weight:normal;
+}
+.title-after{
+    display: block;
+    height: 1px;
+    width: 30px;
+    background: #979797;
+    position: absolute;
+    top: 21px;
+    right: 507px;
+}
+.like-list{
+    overflow: hidden;
+}
+.like-list-thing-1{
+    width: 233px;
+    height: 324px;
+    margin-left: 12px;
+    margin-bottom: 7px;
+    border: 1px solid transparent;
+    padding: 25px;
+    box-sizing: border-box;
+    background: #ffffff;
+    float: left;
+}
+.like-list-thing-2{
+    width: 233px;
+    height: 324px;
+    border: 1px solid transparent;
+    padding: 25px;
+    box-sizing: border-box;
+    background: #ffffff;
+    float: left;
+    margin-bottom: 7px;
+}
+.like-list-thing-1 img{
+    width: 185px;
+    height: 185px;
+}
+.like-list-thing-2 img{
+    width: 185px;
+    height: 185px;
+}
+.like-list-des{
+    margin:8px 25px;
+    height: 32px;
+    line-height: 20px;
+    overflow: hidden;
+    padding: 8px 0px;
+    color:#333;
+    font-size: 14px;
+    text-align: center;
+}
+.like-list-price{
+    text-align: center;
+    color: #ff0036;
+    font-size: 18px;
+    margin-top: 5px;
+}
+.like-list-thing-1:hover{
+    border: 1px solid #ff0036;
+}
+.like-list-thing-1 img:hover{
+    opacity: 0.8;
+}
+.like-list-thing-2 img:hover{
+    opacity: 0.8;
+}
+.like-list-thing-2:hover{
+    border: 1px solid #ff0036;
+}
+/*猜你喜欢结束*/
+/*end开始*/
+.end{
+    height: 45px;
+    background: url("../image/end.png") 50% 50% no-repeat;
+}
+/*底部*/
+.under{
+    border-top: 1px solid #D1D7DC;
+}
+.wrapper1{
+    width: 1190px;
+    margin: 25px auto;
+    height: 100px;
+    background: url("../image/under1.jpg") 0 0 no-repeat;
+    border-bottom: 1px solid #ededed;
+}
+.under-li a{
+    float: left;
+    width: 294.5px;
+    height: 100px;
+    background: transparent;
 }
