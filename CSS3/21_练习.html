@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="21_练习.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="prev"></div>
+        <div id="next"></div>
+    </div>
+    <script>
+        var oContainer = document.getElementById('container');
+        var now = 0;
+        var count = 0;
+        var screemWidth = document.documentElement.clientWidth || document.body.clientWidth;
+        var screemHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        for (var i = 0; i < 24; i++) {
+            var oImg = new Image();
+            oImg.onload = function() {
+                count++;
+                if (count == 48) {
+                    loadSuccsee();
+                }
+            }
+            oImg.src = "练习/img/thumbs/" + (i + 1) + ".jpg";
+        }
+        for (var i = 0; i < 24; i++) {
+            var oImg = new Image();
+            oImg.onload = function() {
+                count++;
+                if (count == 48) {
+                    loadSuccsee();
+                }
+            }
+            oImg.src = "练习/img/" + (i + 1) + ".jpg";
+        }
+
+        function loadSuccsee() {
+            for (var i = 0; i < 4; i++) {
+                for (var j = 0; j < 6; j++) {
+                    var oDiv = document.createElement('div');
+                    oDiv.style.background = "url(练习/img/thumbs/" + (i * 6 + j + 1) + ".jpg)";
+                    oDiv.className = 'box';
+                    oDiv.index = i * 6 + j;
+                    oDiv.innerHTML = "<span></span>"
+                    oDiv.onclick = fn;
+                    oContainer.appendChild(oDiv);
+                }
+            }
+            var aDiv = document.getElementsByClassName('box');
+            var spaceX = (screemWidth - aDiv[0].offsetWidth * 6) / 7;
+            var spaceY = (screemHeight - aDiv[0].offsetHeight * 4) / 5;
+            for (var i = 0; i < 4; i++) {
+                for (var j = 0; j < 6; j++) {
+                    aDiv[i * 6 + j].style.transitionDelay = (23 - i * 6 - j) * 100 + "ms";
+                    aDiv[i * 6 + j].style.left = aDiv[i * 6 + j].offsetWidth * j + spaceX * (j + 1) + "px";
+                    aDiv[i * 6 + j].style.top = aDiv[i * 6 + j].offsetHeight * i + spaceY * (i + 1) + "px";
+                    aDiv[i * 6 + j].style.transform = "rotate(" + (Math.random() - 0.5) * 40 + "deg)";
+                }
+            }
+
+            var bigDisX = (screemWidth - 127 * 6) / 2;
+            var bigDisY = (screemHeight - 127 * 4) / 2;
+            var flag = true;
+            var oNext = document.getElementById('next');
+            var oPrev = document.getElementById('prev');
+
+            function fn() {
+                if (flag) {
+                    for (var i = 0; i < 4; i++) {
+                        for (var j = 0; j < 6; j++) {
+                            aDiv[i * 6 + j].style.transitionDelay = "0ms";
+                            aDiv[i * 6 + j].style.left = 127 * j + bigDisX + "px";
+                            aDiv[i * 6 + j].style.top = 127 * i + bigDisY + "px";
+                            aDiv[i * 6 + j].style.transform = "rotate(0deg)";
+                            aDiv[i * 6 + j].style.borderWidth = "1px";
+
+                            var oSpan = aDiv[i * 6 + j].getElementsByTagName('span')[0];
+                            oSpan.style.opacity = 1;
+                            var x = -j * 125;
+                            var y = -i * 125;
+                            oSpan.style.background = "url(练习/img/" + (this.index + 1) + ".jpg) " + x + "px " + y + "px " + "no-repeat";
+                        }
+                    }
+                    oNext.style.display = "block";
+                    oPrev.style.display = "block";
+                    // 将now的值 设置成点击div的索引
+                    now = this.index;
+
+                } else {
+                    for (var i = 0; i < 4; i++) {
+                        for (var j = 0; j < 6; j++) {
+                            aDiv[i * 6 + j].style.transitionDelay = "0ms";
+                            aDiv[i * 6 + j].style.left = aDiv[i * 6 + j].offsetWidth * j + spaceX * (j + 1) + "px";
+                            aDiv[i * 6 + j].style.top = aDiv[i * 6 + j].offsetHeight * i + spaceY * (i + 1) + "px";
+                            aDiv[i * 6 + j].style.transform = "rotate(" + (Math.random() - 0.5) * 40 + "deg)";
+                            var oSpan = aDiv[i * 6 + j].getElementsByTagName('span')[0];
+                            oSpan.style.opacity = 0;
+                        }
+                    }
+                    oNext.style.display = "none";
+                    oPrev.style.display = "none";
+                }
+                flag = !flag;
+            }
+            var aSpan = oContainer.getElementsByTagName('span');
+            oNext.onclick = function() {
+                now++;
+                if (now == 24) {
+                    now = 0;
+                }
+                // 讲span的背景图片切换成 now+1.jpg
+                for (var i = 0; i < aSpan.length; i++) {
+                    aSpan[i].style.transitionDelay = Math.random() * 500 + "ms";
+                    aSpan[i].style.backgroundImage = "url(练习/img/" + (now + 1) + ".jpg)";
+                }
+            }
+            oPrev.onclick = function() {
+                now--;
+                if (now == -1) {
+                    now = 23;
+                }
+                for (var i = 0; i < aSpan.length; i++) {
+                    aSpan[i].style.transitionDelay = Math.random() * 500 + "ms";
+                    aSpan[i].style.backgroundImage = "url(练习/img/" + (now + 1) + ".jpg)";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

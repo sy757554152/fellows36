@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#container {
+    background: url(练习/img/bg.jpg) 0 0;
+    position: relative;
+    height: 100%;
+}
+
+.box {
+    width: 125px;
+    height: 125px;
+    background: #ffffff;
+    border: 5px solid #fff;
+    position: absolute;
+    left: -135px;
+    top: -135px;
+    transition: all 1s ease;
+}
+
+.box span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: url(练习/img/1.jpg) 0 0 no-repeat;
+    opacity: 0;
+}
+
+#prev {
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    background: #fff url(练习/img/prev.png) center center no-repeat;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+}
+
+#next {
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    background: #fff url(练习/img/next.png) center center no-repeat;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+}

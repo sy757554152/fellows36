@@ -1237,6 +1237,7 @@ body{
 /*底部*/
 .under{
     border-top: 1px solid #D1D7DC;
+    background: #ffffff;
 }
 .wrapper1{
     width: 1190px;
@@ -1250,4 +1251,15 @@ body{
     width: 294.5px;
     height: 100px;
     background: transparent;
+}
+.under-list{
+    width: 1190px;
+    margin: 0px auto;
+    height: 190px;
+    padding-top: 22px;
+}
+.under-list-li{
+    float: left;
+    width: 186px;
+    padding-left: 52px;
 }
