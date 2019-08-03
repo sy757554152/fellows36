@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.12.4.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        #first span {
+            display: block;
+            width: 100px;
+            background: black;
+            font-size: 16px;
+            color: white;
+            border: 1px solid black;
+            height: 35px;
+        }
+        
+        #second span {
+            display: block;
+            height: 35px;
+            width: 100px;
+            background: black;
+            font-size: 16px;
+            color: white;
+            border: 1px solid black;
+        }
+        
+        #list {
+            width: 100px;
+            border: 1px solid black;
+        }
+        
+        #list li {
+            height: 20px;
+            width: 100px;
+            background: white;
+            color: black;
+        }
+        
+        div ul {
+            display: none;
+        }
+        
+        div .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="first">
+            <span class="span1">管理区</span>
+            <ul class="list">
+                <li>2111</li>
+                <li>2111</li>
+                <li>2111</li>
+            </ul>
+        </div>
+        <div id="second">
+            <span class="span1">交流区</span>
+            <ul class="list">
+                <li>2111</li>
+                <li>2111</li>
+                <li>2111</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // $('#span1').each(function() {
+        //     $(this).attr('flag', 'false');
+        // });
+        // console.log($('#span1').attr('flag'));
+        // $('#span1').on('click', function() {
+        //     i = $(this).index('#span1');
+        //     if ($('#span1').attr('flag') == 'true') {
+        //         $('#list').eq(i).css('display', 'none');
+        //         console.log(i);
+        //         console.log($('#list').eq(i));
+        //     } else {
+        //         $('#list').eq(i).css('display', 'block');
+        //         console.log(i);
+        //         console.log($('#list').eq(i));
+        //     }
+        //     $(this).attr('flag', 'true');
+
+        //     console.log(i);
+        // })
+        $('.span1').on('click', function() {
+            $(this).next().toggleClass('show');
+        })
+    </script>
+</body>
+
+</html>

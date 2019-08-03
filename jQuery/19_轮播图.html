@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.12.4.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        #content {
+            height: 291px;
+            width: 750px;
+            margin: 100px;
+            position: relative;
+        }
+        
+        img {
+            float: left;
+            display: none;
+        }
+        
+        .pic {
+            display: block;
+        }
+        
+        .left {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+        }
+        
+        .left li {
+            height: 20px;
+            width: 20px;
+            float: left;
+            background: rgba(0, 0, 0, 0.4);
+            text-align: center;
+            line-height: 20px;
+            margin-right: 5px;
+            border-radius: 5px;
+            font-size: 12px;
+            color: white;
+        }
+        
+        .right {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+        
+        .right li {
+            height: 20px;
+            width: 20px;
+            float: left;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 5px;
+            border-radius: 5px;
+            font-size: 12px;
+            background: rgba(0, 0, 0, 0.4);
+            color: white;
+        }
+        
+        .right li.red1 {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <div id="picture">
+            <a href="#"><img class="pic" src="img/1.jpg" alt=""></a>
+            <a href="#"><img src="img/2.jpg" alt=""></a>
+            <a href="#"><img src="img/3.jpg" alt=""></a>
+            <a href="#"><img src="img/4.jpg" alt=""></a>
+            <a href="#"><img src="img/5.jpg" alt=""></a>
+        </div>
+        <ul class="left">
+            <li>&lt;</li>
+            <li>&gt;</li>
+        </ul>
+        <ul class="right">
+            <li class="red1">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+
+    </div>
+    <script>
+        var i = 0;
+        $('.right li').on('click', function() {
+            $(this).addClass('red1').siblings().removeClass('red1');
+            $('img').each(function(index, elem) {
+                $(elem).css('display', 'none');
+            })
+            $('img').eq($(this).index()).css('display', 'block');
+            i = $(this).index();
+
+            // $('img').eq(i).addClass('pic').siblings().removeClass('pic');
+        })
+        $('.left li').on('click', function() {
+            if ($(this).index() == 1) {
+                i++;
+                console.log(i);
+                if (i == $('.right li').length) {
+                    i = 0;
+                }
+                $('.right li').eq(i).addClass('red1').siblings().removeClass('red1');
+                $('img').each(function(index, elem) {
+                    $(elem).css('display', 'none');
+                })
+                $('img').eq(i).css('display', 'block');
+            } else {
+                i--;
+                if (i == -1) {
+                    i = $('.right li').length - 1;
+                }
+                $('.right li').eq(i).addClass('red1').siblings().removeClass('red1');
+                $('img').each(function(index, elem) {
+                    $(elem).css('display', 'none');
+                })
+                $('img').eq(i).css('display', 'block');
+            }
+        })
+        var timer = setInterval(function() {
+            $('.left li').eq(1).trigger('click');
+        }, 1000);
+        $('#content').mouseenter(function() {
+            clearInterval(timer);
+        })
+        $('#content').mouseleave(function() {
+            timer = setInterval(function() {
+                $('.left li').eq(1).trigger('click');
+            }, 1000);
+        })
+    </script>
+</body>
+
+</html>

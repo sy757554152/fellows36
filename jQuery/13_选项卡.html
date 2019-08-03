@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.12.4.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        #space {
+            margin: 100px;
+        }
+        
+        #list {
+            overflow: hidden;
+        }
+        
+        #list li {
+            float: left;
+            border: 1px solid #898989;
+            color: #666666;
+            font-size: 14px;
+            width: 50px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            margin-right: 10px;
+            border-bottom: none;
+            background: #f1f1f1;
+        }
+        
+        #list li.active {
+            background: purple;
+            color: black;
+        }
+        
+        #space1 {
+            border: 1px solid #868686;
+            height: 100px;
+            width: 300px;
+        }
+        
+        #space1 div {
+            display: none;
+        }
+        
+        #space1 .selected {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="space">
+        <ul id="list">
+            <li>时事</li>
+            <li>体育</li>
+            <li>娱乐</li>
+        </ul>
+        <div id="space1">
+            <div class="div1 selected" id="first">
+                时事1
+            </div>
+            <div class="div1" id="second">
+                体育1
+            </div>
+            <div class="div1" id="third">
+                娱乐1
+            </div>
+        </div>
+    </div>
+    <!-- <script>
+        $('#list').children().on('click', function() {
+            $('li').removeClass('active');
+            $('.div1').removeClass('selected');
+            var index = $(this).index();
+            $('#list').children().eq(index).addClass('active');
+            $('.div1').eq(index).addClass('selected');
+        })
+    </script> -->
+    <script>
+        $('li').on('click', function() {
+            $(this).addClass('active').siblings().removeClass('active');
+            var i = $(this).index();
+            $('.div1').eq(i).addClass('selected').siblings().removeClass('selected');
+        })
+    </script>
+</body>
+
+</html>
