@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            touch-action: none;
+        }
+        
+        body {
+            background: #000;
+        }
+        
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        #container img {
+            width: 25%;
+            box-sizing: border-box;
+            border-bottom: 1px solid #000;
+            border-right: 1px solid #000;
+        }
+        
+        #big {
+            position: absolute;
+            background: #000 url(练习/img/1.jpg) center center no-repeat;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+            left: 0px;
+            top: 0px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <div id="big"></div>
+    <script src="zepto.js"></script>
+    <script src="touch.js"></script>
+    <script>
+        var now = 0;
+        for (var i = 0; i < 24; i++) {
+            $('<img src="练习/img/thumbs/' + (i + 1) + '.jpg">').appendTo('#container');
+        }
+        $('#container img').on('click', function() {
+            var index = $(this).index();
+            $('#big').css('background-image', 'url(练习/img/' + (index + 1) + '.jpg)').show();
+            now = $(this).index();
+        })
+        $('#big').on('click', function() {
+            $(this).hide();
+        }).on('swipeLeft', function() {
+            now++;
+            if (now == $('#container img').length) {
+                now = 0;
+            }
+            $('#big').css("background-image", "url(练习/img/" + (now + 1) + ".jpg)")
+        }).on('swipeRight', function() {
+            now--;
+            if (now == -1) {
+                now = $('#container img').length - 1;
+            }
+            $('#big').css("background-image", "url(练习/img/" + (now + 1) + ".jpg)")
+        })
+    </script>
+</body>
+
+</html>
