@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //对象的属性名是字符串的方式 
+        let obj ={
+            name:'shiyu'
+        }
+        //Map类似于对象 Map的属性名可以是其他类型的 键值对集合
+        let p1=new Map();
+        p1.set('age',19);
+        p1.set('name','shiyu')
+        p1.set(obj,'haha ');
+        console.log(p1);
+    </script>
+</body>
+</html>

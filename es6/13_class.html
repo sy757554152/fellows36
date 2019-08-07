@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(name,age){
+                this.name=name;
+                this.age=age; 
+            }
+            say(){
+                console.log('I am a man');
+            }
+        }
+        class Coder extends Person{
+            constructor(name,age,num){
+                super(name,age);
+                this.hair=num;
+            }
+            coding(){
+                console.log('996 ICU');
+            }
+            static codingnow(){
+                console.log('hello world!');
+            }
+        }
+        let c1=new Coder('石宇',20,666);
+        console.log(c1);
+        Coder.codingnow();
+        c1.coding();
+    </script>
+</body>
+</html>

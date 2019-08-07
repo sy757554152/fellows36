@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //set 类似数组
+        let a = new Set([1,2,3,4,5,4,2,2,0,1]);
+        console.log(a);
+        var arr=[1,2,5,3,2,1,5,4];
+        var y =new Set(arr);
+        y.add(10);
+        y.delete(1);
+        var arr2=[...y];
+        var arr3=Array.from(y);
+        console.log(y);
+        console.log(y.size);
+    </script>
+</body>
+</html>
