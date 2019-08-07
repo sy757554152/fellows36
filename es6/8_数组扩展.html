@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        var aLi = document.getElementsByTagName('li');
+        // 类数组 转成数组1
+        // var arr = [...aLi];
+        // 类数组 转成数组2
+        // var arr1 = Array.from(aLi);
+        // console.log(arr1);
+
+        var arr3 = [1, 2, 3, 4, 5];
+        // 找到第一个符合条件的成员
+        var x = arr3.find(function (val, index, arr) {
+            // console.log(val,key,arr);
+            return val > 1;
+        })
+
+        console.log(x);
+
+        var arr4 = [{
+            name: 'zs',
+            age: 20
+        }, {
+            name: 'lisi',
+            age: 18
+        }, {
+            name: 'wangnwu',
+            age: 30
+        },
+        {
+            name: 'xxx',
+            age: 18
+        }];
+        var obj1 = arr4.find(function(obj,index,arr){
+            return obj.age == 18;
+        })
+        console.log(obj1);
+        // 过滤出所有符合条件的成员 []
+        var arr5 = arr4.filter(function(obj){
+            return obj.age == 18;
+        })
+        console.log(arr5);
+
+        var arr6 = [1,2,3,4,5];  //=>[2,4,6,8,10]
+        // 映射出新数组 返回新数组
+        var arr7 = arr6.map(function(val,index){
+            return val*2;
+        });
+
+        console.log(arr7);
+        // 循环 
+        arr6.forEach(function(val,index){
+            console.log(val,index);
+        })
+
+       console.log( arr6.includes(1))
+
+        // for(var i=0; i<aLi.length; i++){
+        //     aLi[i]
+        // }
+        var arr8 = ['a','b','c','d','e'];
+        for(val of arr8){  //循环数组中的元素
+            console.log(val);
+        }
+        for(index of arr8.keys()){ //循环索引
+            console.log(index);
+        }
+        for([index,val] of arr8.entries()){ //循环索引 数组中的元素
+            // console.log(arr); //[0,'a'] 
+            // var a = arr[0]
+            // var b = arr[1]
+            console.log(index,val);
+        }
+
+        
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

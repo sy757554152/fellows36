@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        window.val = 1;
+        var obj = {
+            val: 2,
+            dbl: function () {
+                this.val *= 2;
+                val *= 2; // obj.dbl() 取到的是val变量   即 window.val = 1;
+                console.log(val);
+                console.log(this.val);
+            }
+        };
+        obj.dbl();  //  obj.val = 4;  val = 2;   2 4
+        var func = obj.dbl;
+        // 理解为：
+        // var func = function () {
+        //     this.val *= 2;  //window.val = 4;
+        //     val *= 2;    // 8
+        //     console.log(val);   //8
+        //     console.log(this.val); //8
+        // }
+        func(); //
+
+    </script>
+</body>
+
+</html>

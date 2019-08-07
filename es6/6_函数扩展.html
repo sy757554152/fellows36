@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <script>
+
+        // var a = function () {
+        //     console.log(this);
+        //     console.log('hahah')
+        // }
+
+        // a();
+        // // 箭头函数
+        // var b = (x,y) =>{
+        //     console.log(x,y);
+        // }
+        // b(1,2);
+
+        // var aLi = document.getElementsByTagName('li');
+        // for(var i=0; i<aLi.length; i++){
+        //     aLi[i].onclick = function(){
+        //         // console.log();
+        //         setTimeout(function(){
+        //             console.log(this);
+        //         }.bind(this),1000);
+        //     }
+        // }
+
+        //1. this指向声明时的this(父作用域的this)  普通函数中this调用时的this
+        // var aLi = document.getElementsByTagName('li');
+        // for(var i=0; i<aLi.length; i++){
+        //     aLi[i].onclick = function(){
+
+        //         setTimeout(()=>{
+        //             console.log(this);
+        //         },1000);
+        //     }
+        // }
+
+
+        // var obj = {
+        //     name:'zs',
+        //     say:()=>{
+        //         setTimeout(()=>{
+        //             console.log(this);
+        //         },1000)
+        //     }
+        // }
+
+        // obj.say();//window
+
+        // 2 箭头函数中不能使用arguments   可以使用...rest
+        // let fn = (...rest) => { //fn is not a constructor
+        //     console.log(rest);
+        // }
+
+        // // var f1 = new fn();
+        // fn(1, 2, 3, 4);
+
+        // 解构赋值  默认值
+        let fn = ([a,b,c,d=100]) => { //fn is not a constructor
+            // console.log(rest);
+        }
+
+        // var f1 = new fn();
+        fn([1, 2, 3, 4]);
+
+        console.log(fn.length);
+
+        // 3箭头函数不能使用new
+
+        // function Person(){
+
+        // }
+        // new Person()
+
+
+
+
+        function f2(a,b,c,d=10){
+
+        }
+
+        f2(1,2,3,4);
+
+        console.log(f2.length);
+
+        
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
