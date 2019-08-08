@@ -1257,9 +1257,119 @@ body{
     margin: 0px auto;
     height: 190px;
     padding-top: 22px;
+    background: url("../image/black-tmall.png") 45px bottom no-repeat;
+    background-size: 68px 25px;
 }
 .under-list-li{
     float: left;
     width: 186px;
     padding-left: 52px;
+}
+.under-list-li span{
+    display: block;
+    color: #646464;
+    font-size: 16px;
+    font-weight: 700;
+    width: 186px;
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+}
+.under-list-li a{
+    display: block;
+    width: 186px;
+    height: 20px;
+    line-height: 20px;
+    color: #8b8b8b;
+}
+.under-list-li .under-img img{
+    width: 105px;
+    height: 105px;
+    line-height: 105px;
+    text-align: center;
+}
+/*底部结束*/
+/*黑色底部开始*/
+.under-bottom{
+    background: #000;
+    border-top: 2px solid #ff0036;
+}
+.black-bottom{
+    height: 265px;
+    width: 1190px;
+    margin: 0 auto;
+    background: #000;
+
+}
+.black-bottom-top{
+     width: 1190px;
+     height: 25px;
+     padding: 5px 0;
+     color: #fff;
+     line-height: 25px;
+ }
+.black-bottom-top a{
+    color: #fff;
+    margin-right: 3px;
+}
+.black-bottom-center{
+    width: 1190px;
+    height: 25px;
+    padding: 5px 0;
+    color: #fff;
+    line-height: 25px;
+}
+.black-bottom-center a{
+    color: #fff;
+    margin-right: 3px;
+}
+.black-bottom-center a::after{
+    content: '|';
+    color: #fff;
+    padding-left: 3px;
+}
+.black-bottom-center .black-bottom-center-end::after{
+    content: '';
+}
+.black-bottom-bottom{
+    color: #a4a4a4;
+}
+.black-bottom-bottom-div{
+    float: left;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-right: 65px;
+    position: relative;
+}
+.bottom-div{
+     margin-bottom: 8px;
+ }
+.black-bottom-bottom-2{
+    width: 1190px;
+    float: left;
+    color: #686868;
+}
+.black-bottom-bottom-3{
+    width: 1190px;
+    float: left;
+    margin: 15px 0;
+}
+.black-bottom-bottom-div a{
+    color: #a4a4a4;
+}
+.black-bottom-bottom-div img{
+    position: absolute;
+}
+#img-next{
+    margin-left: 25px;
+}
+
+.black-bottom-bottom-3-img1{
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+.black-bottom-bottom-3-img2{
+    height: 30px;
+    width: 80px;
 }
