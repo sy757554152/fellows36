@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <a href="http://www.baidu.com" @click.prevent="fn()">百度一下</a>
+        <a href="http://www.baidu.com" @click.once.prevent="fn()">百度</a>
+        <input type="text" @keyup.enter="fn1()">
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            methods:{
+                fn(){
+                    console.log('hahhaha');
+                },
+                fn1(){
+                    console.log(event.keyCode);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
