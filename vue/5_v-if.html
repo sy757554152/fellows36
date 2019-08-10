@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-if 初始化开销小 -->
+        <h2 v-if="flag">{{msg}}</h2>
+        <!-- v-show  display: none; 频繁切换v-show  -->
+        <h2 v-show="flag">{{msg}}</h2>
+        <button @click="change">click</button>
+        <h3 v-if="a==1">111</h3>
+        <h3 v-else-if="a==2">222</h3>
+        <h3 v-else-if="a==3">333</h3>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        let vm =new Vue({
+            el:"#app",
+            data:{
+                msg:"hahah",
+                flag:true,
+                a:1
+            },
+            methods:{
+                change(){
+                    this.flag=!this.flag;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

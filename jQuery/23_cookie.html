@@ -44,6 +44,15 @@
         }
 
        console.log( getCookie('nameAA') );
+       function deletecookie(name){
+           var date = new Date();
+           date.setTime(date.getTime()-1);
+           var cookieName=getCookie(name);
+           console.log(cookieName);
+           if(cookieName!=null){
+               document.cookie=name + "="+cookieName+";expires="+date;
+           }
+       }
 
 
 

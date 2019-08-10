@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-
 <body>
     <script>
         // 类  构造函数
         // 属性写在构造函数中 方法写在原型下
-        function Person(name, age) {
+        function Person(name,age){
             this.name = name;
             this.age = age;
-        }
+        }    
         // 构造函数有一个prototype属性 ，指向原型对象，添加在原型对象下的属性和方法可以被
         // 实例化对象所共享
-        Person.prototype.say = function () {
-            console.log('我是' + this.name);
+        Person.prototype.say = function(){
+            console.log('我是'+this.name);
         }
         // 实例化对象
-        var p1 = new Person('zs', 20);
-        p1.say();
+        var p1 = new Person('zs',20);
+        // p1.say();
         // 程序员类 继承人类的属性和方法
-        // 1 在构造函数中 通过父类Person.call(this) 继承属性
-        function Coder(name, age) {
+        // 1 在子类构造函数中 通过父类Person.call(this) 继承父类属性
+        function Coder(name,age){
             // this ->c1
             // Person(name,age);//函数this->window 将name age添加到c1
-            Person.call(this, name, age);
+            Person.call(this,name,age);  
         }
-
-        var c1 = new Coder('lisi', 18);
-        var c2 = new Coder('zhanwu', 20);
-
-        console.log(c1, c2);
+        // 2继承父类的方法 子类的 prototype = new 父类的实例化对象 继承方法 
+        Coder.prototype = new Person();
+        // Coder的原型对象下 本来constructor指回Coder构造函数  需要手动添加 constructor属性 = Coder
+        Coder.prototype.constructor = Coder;
+        var c1 = new Coder('lisi',18);
+        var c2 = new Coder('zhangwu',20);
+        // console.log(c2.constructor);
+        c2.say();
+        console.log(c1,c2);
+        // c1.say();
+        
+        
     </script>
-</body>
 
+    
+</body>
 </html>

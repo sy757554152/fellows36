@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- {{studentList}} -->
+        <ul>
+            <!-- 循环studentList数组   obj取到数组中的每一个元素-->
+            <li v-for="obj in studentList">{{obj.name}} | {{obj.age}}</li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                studentList:[
+                    {
+                        name:'zs',
+                        age:20
+                    },
+                    {
+                        name:'lisi',
+                        age:18
+                    }
+                ]
+            }
+        });
+
+        
+
+
+
+
+    
+    
+    
+    </script>
+
+</body>
+</html>
