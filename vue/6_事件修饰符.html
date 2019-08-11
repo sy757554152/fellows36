@@ -8,6 +8,9 @@
 </head>
 <body>
     <div id="app">
+        <!-- .stop阻止事件冒泡 -->
+        <!-- .prevent阻止默认行为 -->
+        <!-- .once只执行一次 -->
         <a href="http://www.baidu.com" @click.prevent="fn()">百度一下</a>
         <a href="http://www.baidu.com" @click.once.prevent="fn()">百度</a>
         <input type="text" @keyup.enter="fn1()">

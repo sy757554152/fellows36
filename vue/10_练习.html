@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="addli" @keyup=(show())>
+        <button @click="add()">add</button>
+        <ul>
+            <li v-for="(obj,index) in list" v-show="obj.isflag" @click="change(obj)" :class="{red:obj.isRed}">{{obj.name}}<button @click.stop="del(index)">del</button></li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                addli:"",
+                list:[{
+                        name:"aaa",
+                        isRed:false,
+                        isflag:true
+                    },{
+                        name:"bbb",
+                        isRed:false,
+                        isflag:true
+                    }
+                ]
+            },
+            methods:{
+                add(){
+                    this.list.push({name:this.addli,isRed:false});
+                    this.addli="";
+                    this.show();
+                },
+                del(index,obj){
+                    this.list.splice(index,1);
+                },
+                change(obj){
+                    // this.isRed=!this.isRed;
+                    obj.isRed=!obj.isRed;
+                },
+                show(){
+                    let value=this.addli;
+                    this.list.forEach(function(obj,index) {
+                        if(obj.name.includes(value)){
+                            obj.isflag=true;
+                        }
+                        else{
+                            obj.isflag=false;
+                        }
+                    });
+                }
+            }
+        })
+    </script>
+</body>
+</html>
