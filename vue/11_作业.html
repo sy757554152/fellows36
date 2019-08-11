@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 400px;
+            margin:50px auto;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            height: 50px;
+            line-height: 50px;
+            background: #cccccc;
+            padding: 0 10px;
+            margin-bottom:10px;
+        }
+        .price,.close{
+            float:right;
+        }
+        .close{
+            margin-left:10px;
+            color: red;
+        }
+        .selected{
+            background:pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>todolist</h1>
+        <div>
+            <label for="product-name">名称</label>
+            <input id="product-name" placeholder="请输入产品名" type="text" v-model="name">
+            <label for="product-name">价格</label>
+            <input id="product-price" placeholder="请输入产品价格" type="text" v-model="price">
+            <button @click="add()">添加</button>
+
+        </div>
+        <div>
+            <input placeholder="请输入搜索内容" type="text" v-model="searchname">
+            <button @click="search()">搜索</button>
+        </div>
+        <ul>
+            <li v-for="(obj,index) in product" v-show="obj.isFlag" @click="change(obj,index)" :class="{selected:obj.isSelect}">
+                <input type="checkbox" v-model="check" :value="index">
+                <span>{{obj.name}}</span>
+                <span class="close">[X]</span>
+                <span class="price">{{obj.price}}</span>
+            </li>
+        </ul>
+        <div>
+            <button @click="del()">删除选中</button>
+            <span>总价</span>
+            <span>{{sum()}}</span>
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        let vm=new Vue({
+            el:"#container",
+            data:{
+                searchname:"",
+                price:"",
+                name:"",
+                check:[],
+                product:[
+                    {
+                        name:"裤子",
+                        price:98,
+                        isSelect:false,
+                        isFlag:true
+                    },{
+                        name:"衬衫",
+                        price:69,
+                        isSelect:false,
+                        isFlag:true
+                    },{
+                        name:"iphonex",
+                        price:6999,
+                        isSelect:false,
+                        isFlag:true
+                    },{
+                        name:"Mac pro",
+                        price:10999,
+                        isSelect:false,
+                        isFlag:true
+                    }
+                ]
+            },
+            methods:{
+                add(){
+                    this.product.push({name:this.name,price:this.price,isSelect:false,isFlag:true});
+                    this.name="";
+                    this.price="";
+                },
+                search(){
+                    let value=this.searchname;
+                    this.product.forEach(function(obj,index){
+                        if(obj.name.includes(value)){
+                            obj.isFlag=true;
+                        }else{
+                            obj.isFlag=false;
+                        }
+                    });
+                },
+                change(obj,index){
+                    if(obj.isSelect){
+                        this.check.splice(this.check.indexOf(index),1);
+                    }else{
+                        this.check.push(index);
+                    }
+                    obj.isSelect=!obj.isSelect;
+                },
+                del(){
+                    let check1=this.check;
+                    let product1=this.product;
+                    this.product.forEach(function(obj,index){
+                        if(obj.isSelect){
+                            check1.splice(check1.indexOf(index),1);
+                            product1.splice(index,1);
+                        }
+                    });
+                },
+                sum(){
+                    let count=0;
+                    this.product.forEach(function(obj,index){
+                        if(obj.isSelect){
+                            count+=obj.price;
+                        }
+                    })
+                    return count;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
