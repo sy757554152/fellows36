@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .div1{
+            width: 300px;
+        }
+        .div1 div{
+            border: 1px solid #000;
+        }
+        .delete {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="login()">登录</button>
+        <button @click="build()">注册</button>
+        <div>
+            <my-component title="登录" v-show="isFlaglogin">
+                <span class="delete" slot="dele" @click="dele1()">[x]</span>
+            </my-component>
+            <my-component title="注册" v-show="isFlagbuild">
+                <span class="delete" slot="dele" @click="dele2()">[x]</span>
+                <span slot="contrue">确认密码</span>
+                <input slot="contrue" type="text" placeholder="请再次输入密码">
+                <br slot="contrue"/>
+            </my-component>
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <template id="temp" v-show="isFlag">
+        <div class="div1">
+            <div>
+                <span>{{title}}</span>
+                <slot name="dele"></slot>
+            </div>
+            <div>
+                用户名
+                <input type="text" placeholder="请输入用户名">
+                <br />
+                密码
+                <input type="text" placeholder="密码">
+                <br />
+                <slot name="contrue"></slot>
+                <button>{{title}}</button>
+            </div>
+        </div>
+    </template>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                isFlaglogin: false,
+                isFlagbuild: false
+            },
+            components: {
+                "myComponent": {
+                    template: "#temp",
+                    props: ['title'],
+                    data() {
+                        return {
+                            isFlag: true
+                        }
+                    },
+                    methods: {
+                    }
+                }
+
+            },
+            methods: {
+                login() {
+                    this.isFlaglogin = true;
+                    this.isFlagbuild = false;
+                },
+                build() {
+                    this.isFlagbuild = true;
+                    this.isFlaglogin = false;
+                },
+                dele1() {
+                    this.isFlaglogin = false;
+                },
+                dele2() {
+                    this.isFlagbuild = false;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

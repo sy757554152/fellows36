@@ -1,0 +1,21 @@
+body {
+  background: "orange";
+  color: #000;
+  width: 800px;
+}
+body #app {
+  color: "orange";
+}
+body #app h2 {
+  width: 800px;
+}
+body #app p {
+  height: 120px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+body #app p:hover {
+  color: blue;
+}
+
+/*# sourceMappingURL=text.css.map */

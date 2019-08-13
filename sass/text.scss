@@ -1,0 +1,26 @@
+$color:"orange";
+$color:"red" !default;
+$attr:width;
+body{
+    background: $color;
+    color: #000;
+    #{$attr}:800px;
+    #app{
+        color: $color;
+        h2{
+            width: 800px;
+        }
+        p{
+            height: 120px;
+            // padding-top: 20px;
+            // padding-bottom: 20px;
+            padding:{
+                top: 20px;
+                bottom: 20px;
+            }
+            &:hover{
+                color: blue;
+            }
+        }
+    }
+}
