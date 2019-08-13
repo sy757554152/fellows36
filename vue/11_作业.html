@@ -56,7 +56,7 @@
             <li v-for="(obj,index) in product" v-show="obj.isFlag" @click="change(obj,index)" :class="{selected:obj.isSelect}">
                 <input type="checkbox" v-model="check" :value="index">
                 <span>{{obj.name}}</span>
-                <span class="close">[X]</span>
+                <span class="close" @click.stop="dele(index)">[X]</span>
                 <span class="price">{{obj.price}}</span>
             </li>
         </ul>
@@ -101,7 +101,7 @@
             },
             methods:{
                 add(){
-                    this.product.push({name:this.name,price:this.price,isSelect:false,isFlag:true});
+                    this.product.push({name:this.name,price:this.price*1,isSelect:false,isFlag:true});
                     this.name="";
                     this.price="";
                 },
@@ -132,6 +132,9 @@
                             product1.splice(index,1);
                         }
                     });
+                },
+                dele(index){
+                    this.product.splice(index,1);
                 },
                 sum(){
                     let count=0;

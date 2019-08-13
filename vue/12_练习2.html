@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div>
+            是否需要额外付费设施
+            <input type="checkbox" v-model="check" @click="onCheck()">
+            <ul v-show="check">
+                <li v-for="obj in thing">{{obj.name}} ({{obj.price}}) <input type="checkbox" v-model="obj.isFlag" @click="onCheckthing(obj)"></li>
+            </ul>
+        </div>
+        <div>
+            <span>订单费用信息</span>
+            <ul>
+                <li>群力花园豪华型(400)</li>
+                <li v-for="obj in thing" v-show="obj.isFlag">{{obj.name}}({{obj.price}})</li>
+            </ul>
+        </div>
+        <div>
+            <span>总金额</span>
+            {{sum()}}
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        let vm =new Vue({
+            el:"#container",
+            data:{
+                check:false,
+                thing:[
+                    {
+                        name:"沙发",
+                        price:100,
+                        isFlag:false
+                    },{
+                        name:"wifi",
+                        price:50,
+                        isFlag:false
+                    },{
+                        name:"电脑",
+                        price:200,
+                        isFlag:false
+                    }
+                ]
+            },
+            methods:{
+                onCheck(){
+                    this.check=!this.check;
+                },
+                onCheckthing(obj){
+                    obj.isFlag=!obj.isFlag;
+                },
+                sum(){
+                    let num=400;
+                    this.thing.forEach(function(obj){
+                        if(obj.isFlag){
+                            num+=obj.price;
+                        }
+                    })
+                    return num;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
