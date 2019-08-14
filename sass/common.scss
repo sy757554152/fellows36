@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+@mixin a($w,$h,$c:green) {
+    width: $w;
+    height: $h;
+    border: 1px solid $c;
+}
+@mixin arrow($size:5px,$col:#000,$dir:top) { //top bottom left right
+    width:0;
+    height:0;
+    border:$size solid transparent;
+    @if($dir == 'top'){
+        border-bottom-color: $col;
+    }
+    @if($dir == 'bottom'){
+        border-top-color: $col;
+    }
+    @if($dir == 'left'){
+        border-right-color: $col;
+    }
+    @if($dir == 'right'){
+        border-left-color: $col;
+    }
+}
+@function add($w,$h){
+    @return $w+$h;
+}

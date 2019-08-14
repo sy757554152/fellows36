@@ -1,19 +1,31 @@
+@import 'common';
+@charset "utf-8";
 $color:"orange";
 $color:"red" !default;
 $attr:width;
+$url:'1.jpg';
+
 body{
-    background: $color;
-    color: #000;
+    // background: $color;
     #{$attr}:800px;
+    height: 300px;
+    background: $color url(#{url}) 0 0 no-repeat; 
+    color: green;
     #app{
-        color: $color;
+        color: pink;
         h2{
             width: 800px;
+            @include a(300px,400px,red);
         }
         p{
-            height: 120px;
+            height: 300px;
+            @include a(500px,200px,pink);
             // padding-top: 20px;
             // padding-bottom: 20px;
+            /*
+               padding-top: 20px;
+               padding-bottom: 20px;
+            */
             padding:{
                 top: 20px;
                 bottom: 20px;
@@ -21,6 +33,45 @@ body{
             &:hover{
                 color: blue;
             }
+        }
+        h5{
+            @extend h2;
+            height: add(500px,300px);
+            color: #000;
+        }
+    }
+    .arrow{
+        @include arrow(10px,#00f);
+        // width: (500px/5);
+        // height: 300px-100px;
+    }
+    $i:10;
+    @if($i<0){
+        .aa{
+            width:200px;
+            background: #000000;
+        }
+    }
+    @for $j from 1 to 5{  // 1 2 3 4   
+    // @for $j from 1 through 5{  // 1 2 3 4  5
+        .item-#{$j}{
+            width:20px*$j;
+        }
+    }
+
+
+    $m:5;
+    @while($m<10){
+        .xx#{$m}{
+            width:$m*50px;
+        }
+        $m:$m+1;
+    }
+    
+    $list:success error warn;
+    @each $n in $list {
+        .#{$n}{
+            background: url(#{$n}.jpg);
         }
     }
 }
