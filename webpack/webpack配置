@@ -1,0 +1,59 @@
+1 入口
+2 出口
+3 package.json
+  "scripts": {
+    "build": "webpack"
+  },
+  cnpm install -D webpack-cli
+  
+  =>   npm run build  (打包 执行完这行 会生成一个dist文件)
+
+4 html-webpack-plugin插件  打包html的插件
+      1）下载 cnpm i -D html-webpack-plugin
+      2) 在webpack.config.js中引入  
+        const HtmlWebpackPlugin = require('html-webpack-plugin');
+      3）使用webpack.config.js中
+        plugins:[
+            new HtmlWebpackPlugin({
+                minify:{
+                    removeAttributeQuotes:true
+                },
+                hash:true,
+                template:'./src/index.html'
+            })
+        ]
+5 服务预热更新
+  1）下载 cnpm i -D  webpack-dev-server
+  2) 在webpack.config.js中中配置devServer
+        devServer:{
+          contentBase:path.resolve(__dirname,'dist'), //根目录
+          host:'localhost' 
+      }
+  3) 在package.json 配置  
+      "scripts": {
+          "build": "webpack",
+          "server":"webpack-dev-server --open"
+      },
+  4）启动服务  npm run  server
+6 打包css
+    1)下载 css-loader style-loader   cnpm i -D css-loader style-loader
+    2)在webpack.config.js中中配置module
+      module:{
+          rules:[
+              {
+                  test:/\.css$/,
+                  use:['style-loader','css-loader']
+              }
+          ]
+      }
+    3）在入口文件中引入需要使用的css文件 import './index.css';  
+    4) npm run build 在dist中的index.js中 搜索css是否存在 （css是被打包到了js中）
+7 mode配置生产环境还是开发环境 
+      "development", 开发环境
+      "production" 生产环境
+
+
+
+    
+
+
