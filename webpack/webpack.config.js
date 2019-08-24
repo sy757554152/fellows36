@@ -18,7 +18,13 @@ module.exports = {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: "css-loader"
+                    use:[
+                        { 
+                            loader: 'css-loader',
+                            options: { importLoaders: 1 } 
+                        },
+                        'postcss-loader'
+                    ]
                 })
             },{
                 test:/\.png|jpg|gif/,
@@ -31,6 +37,31 @@ module.exports = {
                         }
                     }
                 ]
+            },{
+                test:/\.(htm|html)/i,
+                loader:["html-withimg-loader"]
+            },
+            // ,{
+            //     test:/\.(scss|sass)$/,
+            //     use:["style-loader","css-loader","sass-loader"]
+            // },
+            {
+                test:/\.(scss|sass)$/,
+                use:ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: ["css-loader","sass-loader"]
+                })
+            },{
+                test: /\.js$/,
+                use: [
+                    {
+                        loader: "babel-loader",
+                        options:{
+                            presets:['@babel/preset-env']
+                        }
+                    },
+                ],
+                exclude:/node_modules/
             }
         ]
     },

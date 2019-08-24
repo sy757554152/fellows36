@@ -1,3 +1,21 @@
-body{
-    background: orange url(image/3.png) 0 0 repeat;
+h2{
+    background: red;
+    height: 500px;
+    background: url(./image/bbb.jpg) 0 0 no-repeat;
+    transform: rotate(30deg);
+    animation: run 2s ease 3s;
+    
+}
+@keyframes run{
+    0%{
+        width:100px;
+    }
+    50%{
+        width:800px;
+
+    }
+    100%{
+        width:300px;
+        
+    }
 }
