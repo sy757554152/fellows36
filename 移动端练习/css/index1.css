@@ -1,0 +1,302 @@
+/* 标题开始 */
+body{
+    font-size: 0.24rem;
+}
+.head{
+    height: 0.88rem;
+    padding-right: 0.2rem;
+    padding-left: 0.2rem;
+    background: #fff;
+    box-sizing: border-box;
+    display: flex;
+}
+.head-left{
+    flex: 1;
+    width: 0.14rem;
+    height: 0.24rem;
+    margin-top: 0.31rem;
+    line-height: 0.24rem;
+    font-size: 0.36rem;
+}
+.head-left a{
+    color: #666;
+}
+.head-mid{
+    flex: 1;
+    width: 1.11rem;
+    height: 0.27rem;
+    margin-top: 0.29rem;
+    line-height: 0.27rem;
+    text-align:center;
+    font-size: 0.28rem;
+    font-weight: bold;
+}
+.head-mid span{
+    color: #333;
+}
+.head-right{
+    flex: 1;
+    width: 0.94rem;
+    height: 0.23rem;
+    margin-top: 0.31rem;
+    line-height: 0.23rem;
+    text-align: right;
+    font-size: 0.24rem;
+    font-weight: bold;
+}
+.head-right a{
+    color: #333;
+}
+/* 标题结束 */
+/* 签到开始 */
+/* 积分开始 */
+.sign-in{
+    height: 3.3rem;
+    background: url(../img/circle.png) center no-repeat;
+    background-size: contain;
+    position: relative;
+}
+.sign-in-top{
+    overflow: hidden;
+}
+.sign-in-top-point{
+    margin-top: 0.36rem;
+    float: left;
+    color: #fff;
+}
+.sign-in-top-func{
+    margin-top: 0.5rem;
+    margin-right: 0.2rem;
+    float: right;
+    font-size: 0.24rem;
+    color: #fff;
+}
+.sign-in-top-sum{
+    margin-left: 0.19rem;
+    font-size: 0.48rem;
+}
+.sign-in-top-word{
+    font-size: 0.24rem;
+}
+.sign-in-top-func-1::after{
+    content: '|';
+    margin-left: 0.25rem;
+}
+.sign-in-top-func-2{
+    margin-left: 0.15rem;
+}
+.sign-in-top-func-1 a{
+    color: #fff;
+}
+.sign-in-top-func-2 a{
+    color: #fff;
+}
+/* 积分结束 */
+/* 签到提醒开始 */
+.sign-in-mid{
+    margin: 0.18rem 0rem;
+    margin-left: 0.2rem;
+    color: #fff;
+}
+/* 签到提醒结束 */
+/* 签到白框开始 */
+.sign-in-bottom{
+    width: 7.1rem;
+    height: 2.5rem;
+    background: #fff;
+    position: absolute;
+    top: 1.7rem;
+    left: 0.2rem;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+.sign-in-bottom-remind{
+    padding-bottom: 0.25rem;
+    border-bottom: 1px dashed #DDD;
+    overflow: hidden;
+}
+.sign-in-bottom-remind-1{
+    margin-top: 0.33rem;
+    margin-left: 0.2rem;
+    float: left;
+    font-size: 0.28rem;
+    font-weight: 600;
+}
+.sign-in-bottom-remind-2{
+    float: right;
+}
+.sign-in-bottom-right-1{
+    margin-top: 0.36rem;
+    float: left;
+    font-weight: 600;
+}
+.sign-in-bottom-right-2{
+    width: 1.02rem;
+    height: 0.62rem;
+    margin: 0.16rem 0.2rem;
+    margin-bottom: 0rem;
+    background: #ef1c00;
+    border-radius: 0.3rem;
+    float: left;
+    position: relative;
+}
+.sign-in-bottom-right-2 div{
+    width: 0.56rem;
+    height: 0.56rem;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    right: 0.03rem;
+    top: 0.03rem;
+}
+.sign-in-bottom-display{
+    margin: 0.3rem 0.2rem;
+    margin-bottom: 0rem;
+    display: flex;
+    justify-content: space-between;
+    color: #999;
+    
+}
+.sign-in-bottom-display > div{
+    flex: 1;
+    float: left;
+}
+.sign-in-bottom-display > div span{
+    margin-left: 0.3rem;
+}
+.sign-in-bottom-display > div div{
+    margin-top: 0.28rem;
+    text-align: center;
+}
+.sign-in-bottom-display .sign-in-bottom-display-2 div{
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-top: 0.17rem;
+    margin-left: 0.2rem;
+    background: #999;
+    border-radius: 50%;
+    line-height: 0.6rem;
+    color: #fff;
+}
+.sign-in-bottom-display .sign-in-bottom-display-3 div{
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-top: 0.17rem;
+    margin-left: 0.2rem;
+    background: #ef1c00;
+    border-radius: 50%;
+    line-height: 0.6rem;
+    color: #fff;
+}
+/* 签到白框结束 */
+/* 点击签到开始 */
+.click-sign-in{
+    width: 3rem;
+    height: 0.8rem;
+    margin: 1.2rem auto;
+    margin-bottom: 0.3rem;
+    border-radius: 0.4rem;
+    background: #ef1c00;
+    line-height: 0.8rem;
+    text-align: center;
+    color: #fff;
+}
+/* 点击签到结束 */
+/* 签到结束 */
+.grey{
+    height: 0.1rem;
+    background: #eee;
+}
+/* 积分兑好物开始 */
+.exchange-title{
+    height: 0.9rem;
+    margin-left: 0.2rem;
+    line-height: 0.9rem;
+    font-size: 0.28rem;
+    color: #333;
+    font-weight: bold;
+}
+.exchange-thing{
+    margin: 0rem 0.2rem;
+    border:1px solid rgba(221,221,221,1);
+    overflow: hidden;
+}
+.exchange-thing-img{
+    float: left;
+}
+.exchange-thing-img img{
+    width: 2rem;
+    height: 2rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.12rem;
+    margin-left: 0.15rem;
+    border: 1px dashed rgba(0,0,0,0.7);
+}
+.exchange-thing-des{
+    float: left;
+}
+.exchange-thing-des-1{
+    margin-top: 0.4rem;
+    margin-left: 0.16rem;
+}
+.exchange-thing-des-2{
+    margin-top: 0.17rem;
+    margin-left: 0.15rem;
+}
+.exchange-thing-des-img{
+    width: 0.68rem;
+    height: 0.19rem;
+    margin-top: 0.2rem;
+    margin-left: 0.16rem;
+}
+.exchange-thing-des-div{
+    width: 1.6rem;
+    height: 0.5rem;
+    margin-top: 0.05rem;
+    margin-left: 3.06rem;
+    background: #ef1c00;
+    border-radius: 0.25rem;
+    line-height: 0.5rem;
+    text-align: center;
+    font-size: 0.2rem;
+    color: #FEFEFE;
+}
+/* 积分兑好物结束 */
+/* 热们兑换开始 */
+.hot-title{
+    height: 0.9rem;
+    margin-left: 0.2rem;
+    line-height: 0.9rem;
+    font-size: 0.28rem;
+    color: #333;
+    font-weight: bold;
+}
+.img-1{
+    width: 2.3rem;
+    height: 2.3rem;
+    margin-top: 0.15rem;
+    margin-left: 0.1rem;
+}
+.img-2{
+    width: 0.45rem;
+    height: 0.16rem;
+    margin-top: 0.15rem;
+    margin-left: 0.2rem;
+}
+.hot-exchange-first{
+    display: flex;
+    justify-content: space-between;
+}
+.hot-exchange-first-thing1{
+    flex: 1;
+}
+.div-1{
+    margin-top: 0.19rem;
+    margin-left: 0.2rem;
+    font-size: 0.22rem;
+    color: #333;
+}
+.div-2{
+    margin-top: 0.14rem;
+    margin-left: 0.2rem;
+    color: #333;
+}
