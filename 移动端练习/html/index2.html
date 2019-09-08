@@ -55,47 +55,47 @@
     <div class="detailed">
         <div class="detailed-title">积分明细</div>
         <div class="detailed-choose">
-            <div class="detailed-choose-1">全部</div>
-            <div class="detailed-choose-2">收入</div>
-            <div class="detailed-choose-3">支出</div>
+            <div class="detailed-choose-title get-red">全部</div>
+            <div id="detailed-choose-2" class="detailed-choose-title">收入</div>
+            <div class="detailed-choose-title">支出</div>
         </div>
         <ul class="detailed-ul">
-            <li>
+            <li class="detailed-li-plus">
                 <div class="detailed-li-div">
                     <div class="detailed-li-div-1">签到</div>
                     <div class="detailed-li-div-2">签到送积分2019.07.08</div>
                 </div>
                 <div class="detailed-plus">+10</div>
             </li>
-            <li>
+            <li class="detailed-li-plus">
                 <div class="detailed-li-div">
                     <div class="detailed-li-div-1">签到</div>
                     <div class="detailed-li-div-2">签到送积分2019.07.07</div>
                 </div>
                 <div class="detailed-plus">+10</div>
             </li>
-            <li>
+            <li class="detailed-li-reduce">
                 <div class="detailed-li-div">
                     <div class="detailed-li-div-1">兑换购物券</div>
                     <div class="detailed-li-div-2">活动扣积分</div>
                 </div>
                 <div class="detailed-reduce">-3000</div>
             </li>
-            <li>
+            <li class="detailed-li-plus">
                 <div class="detailed-li-div">
                     <div class="detailed-li-div-1">签到</div>
                     <div class="detailed-li-div-2">签到送积分2019.07.07</div>
                 </div>
                 <div class="detailed-plus">+10</div>
             </li>
-            <li>
+            <li class="detailed-li-plus">
                 <div class="detailed-li-div">
                     <div class="detailed-li-div-1">花上声波电动牙刷成人充电软毛美白自动清洁口腔</div>
                     <div class="detailed-li-div-2">购物送积分2019.07.05</div>
                 </div>
                 <div class="detailed-plus">+37</div>
             </li>
-            <li>
+            <li class="detailed-li-plus">
                 <div class="detailed-li-div">
                     <div class="detailed-li-div-1">网红卡通童趣游乐园床裙式四件套儿童少年卡通版</div>
                     <div class="detailed-li-div-2">购物送积分2019.07.05</div>
@@ -104,5 +104,43 @@
             </li>
         </ul>
     </div>
+    <script>
+        var liplus=document.getElementsByClassName('detailed-li-plus');
+        var lireduce=document.getElementsByClassName('detailed-li-reduce');
+        var title=document.getElementsByClassName('detailed-choose-title');
+        for(var i=0;i<title.length;i++){
+            title[i].num=i;
+            title[i].onclick=function(){
+                for(var j=0;j<title.length;j++){
+                    title[j].className="detailed-choose-title";
+                    if(this.num==0){
+                        for(var k=0;k<liplus.length;k++){
+                            liplus[k].style.display="";
+                        }
+                        for(var k=0;k<lireduce.length;k++){
+                            lireduce[k].style.display="";
+                        }
+                    }
+                    if(this.num==1){
+                        for(var k=0;k<liplus.length;k++){
+                            liplus[k].style.display="";
+                        }
+                        for(var k=0;k<lireduce.length;k++){
+                            lireduce[k].style.display="none";
+                        }
+                    }
+                    if(this.num==2){
+                        for(var k=0;k<liplus.length;k++){
+                            liplus[k].style.display="none";
+                        }
+                        for(var k=0;k<lireduce.length;k++){
+                            lireduce[k].style.display="";
+                        }
+                    }
+                }
+                this.className="detailed-choose-title get-red";
+            }
+        }
+    </script>
 </body>
 </html>

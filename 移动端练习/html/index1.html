@@ -38,7 +38,7 @@
                 <div class="sign-in-bottom-remind-2">
                     <span class="sign-in-bottom-right-1">签到提醒</span>
                     <div class="sign-in-bottom-right-2">
-                        <div></div>
+                        <div id="move"></div>
                     </div>
                 </div>
             </div>
@@ -137,5 +137,11 @@
             </div>
         </div>
     </div>
+    <script>
+        var circle=document.getElementById('move');
+        circle.onclick=function(){
+            circle.style.left="0.03rem";
+        }
+    </script>
 </body>
 </html>
