@@ -1,8 +1,8 @@
-<!--页面样式组件-->
 <template>
     <div>
-        This is my life.
+        子路由1
     </div>
+     
 </template>
 
 <script>

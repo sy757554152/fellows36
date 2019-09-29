@@ -1,7 +1,6 @@
-<!--页面样式组件-->
-<template>
+b=<template>
     <div>
-        This is my life.
+        <h2>哎呦，页面走丢了</h2>
     </div>
 </template>
 

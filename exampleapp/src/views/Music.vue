@@ -1,7 +1,7 @@
-<!--页面样式组件-->
 <template>
     <div>
-        This is my life.
+        music
+
     </div>
 </template>
 

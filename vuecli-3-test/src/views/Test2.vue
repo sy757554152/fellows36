@@ -1,7 +1,6 @@
-<!--页面样式组件-->
 <template>
     <div>
-        This is my life.
+        <h2>子路由2</h2>
     </div>
 </template>
 

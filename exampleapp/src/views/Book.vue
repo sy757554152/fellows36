@@ -1,7 +1,6 @@
-<!--页面样式组件-->
 <template>
     <div>
-        This is my life.
+        book
     </div>
 </template>
 
