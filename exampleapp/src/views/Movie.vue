@@ -59,7 +59,7 @@ export default {
       }
     },
     godetails(id){
-      this.$route.push({path:'/details',query:{id}})
+      this.$router.push({path:'/details',query:{id:id}})
     }
   },
   mounted() {

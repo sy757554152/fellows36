@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+     // this.state.num 获取state中的值 
+    // 修改state中的值
+        class Welcome extends React.Component{
+            constructor(){
+                super();
+                this.state={
+                    num:1
+                }
+                
+            }
+            add(){
+                // 修改state中的num
+                this.setState({
+                    num:this.state.num+1
+                });
+            }
+            render(){
+                return(
+                    <div>
+                        <h2>欢迎{this.props.name}</h2>
+                        <p>{this.props.text}</p>
+                        {this.props.children}
+                        <h1>{this.state.num}</h1>
+                        <button onClick={()=>{this.add()}}>add</button>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Welcome name="石宇" text="欢迎加入唯创36班大家庭！">
+            <div>Nice!</div>    
+            </Welcome>,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+</html>

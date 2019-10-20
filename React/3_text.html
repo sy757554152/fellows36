@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+    /*
+        获取state中的值 this.state.num 获取state中的值 
+        修改state中的值  this.setSate({});
+     */
+    // 修改state中的值
+        class Welcome extends React.Component{
+            constructor(){
+                super();
+                this.state={
+                    num:1
+                }
+                // addHandle方法的this指向改变
+                this.add=this.add.bind(this);
+            }
+            add(){
+                // 修改state中的num
+                this.setState({
+                    num:this.state.num+1
+                });
+            }
+            render(){
+                return(
+                    <div>
+                        <h1>{this.state.num}</h1>
+                        <button onClick={this.add}>add</button>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Welcome></Welcome>,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+</html>

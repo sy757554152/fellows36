@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     num:"0",
     title:'电影',
-    color:"red"
+    color:"red",
+    id:1
   },
   mutations: {
     changename(state,[name,color]){

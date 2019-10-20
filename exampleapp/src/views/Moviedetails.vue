@@ -1,6 +1,5 @@
 <template>
     <div>
-        {{$route.query.id}}
         <img :src="movieDetail.images.small"/>
         <ul>
             <li class="cast-list" v-for="(cast,index) in movieDetail.casts" :key="index">
@@ -22,10 +21,10 @@ import axios from 'axios';
         methods:{
             getMoviedetails(num){
                 axios.get(
-                    // "https://bird.ioliu.cn/v1?url=https://douban.uieee.com/v2/movie/subject/"+num
-                    './data/moviedetail.json'
+                    "https://bird.ioliu.cn/v1?url=https://douban.uieee.com/v2/movie/subject/"+num
+                    // './data/moviedetail.json'
                 ).then(res=>{
-                    this.movieDetails=res.data;
+                    this.movieDetail=res.data;
                     console.log(res.data);
 
                 }).catch((res)=>{
