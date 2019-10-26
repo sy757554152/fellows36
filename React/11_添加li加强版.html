@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <style>
+        .red{
+            background: #f00;
+        }
+        .notshow{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        let a=5;
+        class Main extends React.Component{
+            constructor(){
+                super();
+                this.state={
+                    name:[
+                        {
+                            id:1,
+                            task:"打游戏",
+                            flag:false,
+                            flag1:true
+                        },
+                        {
+                            id:2,
+                            task:"睡觉",
+                            flag:false,
+                            flag1:true
+                        },
+                        {
+                            id:3,
+                            task:"打代码",
+                            flag:false,
+                            flag1:true
+                        },
+                        {
+                            id:4,
+                            task:"打篮球",
+                            flag:false,
+                            flag1:true
+                        }
+                    ],
+                    findname:[]
+                }
+                this.addli=this.addli.bind(this);
+                this.dele=this.dele.bind(this);
+                this.find=this.find.bind(this);
+                this.changecolor=this.changecolor.bind(this);
+            }
+            addli(val){
+                let arr=this.state.name;
+                arr.push(val);
+                this.setState({
+                    name:arr
+                })
+            }
+            dele(val){
+                let arr=this.state.name;
+                arr.forEach((obj,index)=>{
+                    if(obj.task==val.task){
+                        arr.splice(index,1);
+                    }
+                })
+                this.setState({
+                    name:arr
+                })
+            }
+            find(val){
+                let arr=this.state.name;
+                this.state.name.forEach((obj,index)=>{
+                    if(obj.task.includes(val)){
+                        arr[index].flag1=true;
+                    }
+                    else{
+                        arr[index].flag1=false;
+                    }
+                })
+                this.setState({
+                    name:arr
+                })
+            }
+            changecolor(index){
+                let arr=this.state.name;
+                arr[index].flag=!arr[index].flag;
+                this.setState({
+                    name:arr
+                })
+            }
+            render(){
+                return(
+                    <div>
+                        <h2>简单togoList</h2>
+                        <Find find={this.find}></Find>
+                        <Add addli={this.addli}></Add>
+                        <Liname changecolor={this.changecolor} name={this.state.name} dele={this.dele}></Liname>
+                    </div>
+                )
+            }
+        }
+        class Find extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <input type="text" ref={(input)=>this.myInput=input} />
+                        <button onClick={()=>{
+                            this.props.find(this.myInput.value);
+                        }}>Find</button>
+                    </div>
+                )
+            }
+        }
+        class Add extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <input type="text" ref={(input)=>{this.myInput=input}} />
+                        <button onClick={()=>{
+                            let b={
+                                id:a++,
+                                task:this.myInput.value,
+                                flag:false,
+                                flag1:true
+                            }
+                            this.props.addli(b)
+                            this.myInput.value="";
+                            }}>add</button>
+                    </div>
+                )
+            }
+        }
+        class Liname extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <ul>
+                            {
+                                this.props.name.map((val,index)=>{
+                                    let a=val.flag?"red":"";
+                                    let b=val.flag1?"":"notshow";
+                                    let c=a+" "+b;
+                                    return (    
+                                        <li key={val.id} className={c}>
+                                            <input type="checkbox" onClick={()=>{
+                                                this.props.changecolor(index);
+                                            }} />{val.task}
+                                            <button onClick={()=>{this.props.dele(val)}}>dele</button>
+                                        </li>    
+                                    )
+                                })
+                            }
+                        </ul>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Main></Main>,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+</html>

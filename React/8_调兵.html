@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+    <script type="text/babel">
+        class Man extends React.Component{
+            constructor(){
+                super();
+                this.state={
+                    count:200,
+                    num1:80,
+                    num2:40
+                }
+                this.changefirst=this.changefirst.bind(this);
+                this.changeSecond =this.changeSecond.bind(this);
+            }
+            changefirst(va){
+                if((this.state.count>=va)&&(va*1>=0))
+                this.setState({
+                    count:this.state.count-va*1,
+                    num1:this.state.num1*1+va*1
+                })
+                else(
+                    alert('没兵了')
+                )
+            }
+            changeSecond(va){
+                if((this.state.count>=va)&&(va*1>=0))
+                this.setState({
+                    count:this.state.count-va*1,
+                    num2:this.state.num2*1+va*1
+                })
+                else{
+                    alert('没兵了')
+                }
+            }
+            render(){
+                return(
+                    <div>
+                        <h2>兵营中剩余人数为{this.state.count}</h2>
+                        <Firstchild changefirst={this.changefirst} num1={this.state.num1}></Firstchild>
+                        <Secondchild changeSecond={this.changeSecond} num2={this.state.num2}></Secondchild>
+                    </div>
+                )
+            }
+        }
+        class Firstchild extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <p>第一兵团人数为{this.props.num1}</p>
+                        <input type="text" ref={(input)=>this.myInput = input} />
+                        <button onClick={()=>{
+                            this.props.changefirst(this.myInput.value);
+                            this.myInput.value="";
+                        }}>添加</button>
+                    </div>
+                )
+            }
+        }
+        class Secondchild extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <p>第二兵团人数为{this.props.num2}</p>
+                        <input type="text" ref={(input)=>this.myInput = input} />
+                        <button onClick={()=>{
+                            this.props.changeSecond(this.myInput.value);
+                            this.myInput.value="";
+                        }}>添加</button>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Man></Man>,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+</html>

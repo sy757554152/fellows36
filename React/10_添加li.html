@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class Main extends React.Component{
+            constructor(){
+                super();
+                this.state={
+                    name:["打游戏","打代码","上课","睡觉"]
+                }
+                this.addli=this.addli.bind(this);
+                this.dele=this.dele.bind(this);
+            }
+            addli(val){
+                let arr=this.state.name;
+                arr.push(val);
+                this.setState({
+                    name:arr
+                })
+            }
+            dele(val){
+                let arr=this.state.name;
+                arr.forEach((obj,index)=>{
+                    if(obj==val){
+                        arr.splice(index,1);
+                    }
+                })
+                this.setState({
+                    name:arr
+                })
+            }
+            render(){
+                return(
+                    <div>
+                        <h2>简单togoList</h2>
+                        <Add addli={this.addli}></Add>
+                        <Liname name={this.state.name} dele={this.dele}></Liname>
+                    </div>
+                )
+            }
+        }
+        class Add extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <input type="text" ref={(input)=>{this.myInput=input}} />
+                        <button onClick={()=>{
+                            this.props.addli(this.myInput.value)
+                            this.myInput.value="";
+                            }}>add</button>
+                    </div>
+                )
+            }
+        }
+        class Liname extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <ul>
+                            {
+                                this.props.name.map((val,index)=>{
+                                    return (
+                                        <div>
+                                            <li key={index}>{val}</li>
+                                            <button onClick={()=>{this.props.dele(val)}}>dele</button>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </ul>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Main></Main>,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+</html>

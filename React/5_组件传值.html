@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class Man extends React.Component{
+            constructor(){
+                super();
+                this.state={
+                    msg:"aaaa"
+                }
+                this.changemsg=this.changemsg.bind(this)
+            }
+            changemsg(va){
+                this.setState({
+                    msg:va
+                })
+            }
+            render(){
+                return(
+                    <div>
+                        <p>{this.state.msg}</p>
+                        <Child msg={this.state.msg} changemsg={this.changemsg}></Child>
+                    </div>
+                )
+            }
+        }
+        class Child extends React.Component{
+            constructor(){
+                super();
+                this.state={
+                    va:"bbb"
+                }
+                
+            }
+            render(){
+                return(
+                    <div>
+                        <p>{this.props.msg}</p>
+                        <button onClick={()=>{
+                            {this.props.changemsg(this.state.va)}
+                        }}>change</button>    
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Man></Man>,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+</html>
