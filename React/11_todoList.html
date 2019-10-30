@@ -145,16 +145,20 @@
                     <div>
                         <ul>
                             {
-                                this.props.name.map((val,index)=>{
+                                this.props.name.map((val,index)=>{//map映射
                                     let a=val.flag?"red":"";
                                     let b=val.flag1?"":"notshow";
                                     let c=a+" "+b;
                                     return (    
-                                        <li key={val.id} className={c}>
-                                            <input type="checkbox" onClick={()=>{
+                                        <li key={val.id} className={c} onClick={()=>{
+                                            this.props.changecolor(index);
+                                            this['myInput'+index].checked =!this['myInput'+index].checked;
+                                        }}>
+                                            <input ref={input=>this['myInput'+index] = input} type="checkbox" onClick={(e)=>{//字符串拼接形成数组
                                                 this.props.changecolor(index);
+                                                e.stopPropagation();
                                             }} />{val.task}
-                                            <button onClick={()=>{this.props.dele(val)}}>dele</button>
+                                            <button onClick={(e)=>{this.props.dele(val);e.stopPropagation();}}>dele</button>
                                         </li>    
                                     )
                                 })
