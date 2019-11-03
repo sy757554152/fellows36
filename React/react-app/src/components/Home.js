@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Footer extends Component {
+class Home extends Component {
     render() {
         return (
             <div>
-                <h1>Footer</h1>
+                <div>首页--首页</div>
             </div>
         );
     }
 }
 
-export default Footer;
+export default Home; 

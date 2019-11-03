@@ -37,7 +37,12 @@
                         this.firstName = arr[0];
                         this.lastName  = arr[1];
                     }
+                },
+            watch:{
+                firstName:function(newValue,oldValue){
+                    console.log('hahah',newValue,oldValue);
                 }
+            }
             }
            
         })

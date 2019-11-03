@@ -30,32 +30,32 @@
                     vm.$destroy();
                 }
             },
-            beforeCreate(){ 
+            beforeCreate(){ //组件实例刚被创建，组件属性计算之前,如data属性等
                 // console.log('haha')
                 console.log('beforeCreate',this.$el,this.$data);
             },
-            created(){
+            created(){//组件实例创建完成，属性已绑定，但DOM还未生成，$el属性还不存在
                 // this.add();
                 console.log("created",this.$el,this.$data,this.add);
             },
-            beforeMount(){
+            beforeMount(){//模板编译/挂载之前
                 console.log("beforeMount",this.$el,this.$data);
             },
-            mounted(){
+            mounted(){//模板编译/挂载之后 生成DOM对象
                 console.log("mounted",this.$el,this.$data);
             },
-            beforeUpdate(){
+            beforeUpdate(){//组件更新之前
                 var app=document.getElementById('app');
                 console.log(app.innerHTML);
                 // console.log("beforeUpdate",this.$el,this.$data);
             },
-            updated(){
+            updated(){//组件更新之后
                 console.log("updated",this.$el,this.$data);
             },
-            beforeDestroy(){
+            beforeDestroy(){//组件销毁前调用
                 console.log("beforeDestroy");
             },
-            destroyed(){
+            destroyed(){//组件销毁后调用
                 console.log("destroyed");
             }
         })
