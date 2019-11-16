@@ -10,7 +10,7 @@ import Jump from "./components/Jump";
 import {BrowserRouter as Router,
   Link,
   Route,
-  Switch,
+  // Switch,
   Redirect,
   Prompt
 } from 'react-router-dom';//Route 每个组件下都有自己的路由

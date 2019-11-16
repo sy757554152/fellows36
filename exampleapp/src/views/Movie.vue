@@ -67,7 +67,7 @@ export default {
       var scrollTop =document.documentElement.scrollTop || document.body.scrollTop;//滚动条距离顶部的高度
       var clientHeight =document.documentElement.clientHeight || document.body.clientHeight;//页面可视高度
       var scrollHeight =document.documentElement.scrollHeight || document.body.scrollHeight;//文档总高度
-      if (scrollHeight == Math.ceil(scrollTop) + clientHeight) {
+      if (Math.abs(scrollHeight-scrollTop-clientHeight)<1) {
         this.getMovie(this.num);
       }
     };
