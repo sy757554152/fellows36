@@ -150,26 +150,26 @@
                 }
             }
         }
-        // y[1].onclick = function () {
-        //     sum++;
-        //     if (this.num == 1) {
-        //         if (sum == x.length) {
-        //             c.style.left = "0px";
-        //             sum = 1;
-        //         }
-        //         change(sum);
-        //     }
-        // }
-        // y[1].onclick = function () {
-        //     sum++;
-        //     if (sum == z.length) {
-        //         // 迅速切换到第一张图 
-        //         c.style.left = "0px";
-        //         // 显示索引是1的图片
-        //         sum = 1;
-        //     }
-        //     change(sum);
-        // }
+        y[1].onclick = function () {
+            sum++;
+            if (this.num == 1) {
+                if (sum == x.length) {
+                    c.style.left = "0px";
+                    sum = 1;
+                }
+                change(sum);
+            }
+        }
+        y[1].onclick = function () {
+            sum++;
+            if (sum == z.length) {
+                // 迅速切换到第一张图 
+                c.style.left = "0px";
+                // 显示索引是1的图片
+                sum = 1;
+            }
+            change(sum);
+        }
         function change(sum) {
             for (var i = 0; i < x.length; i++) {
                 x[i].className = "";
